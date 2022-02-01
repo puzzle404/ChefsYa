@@ -4,7 +4,7 @@ class CreateDishes < ActiveRecord::Migration[6.1]
       t.string :title
       t.text :description
       t.integer :price
-      t.references :chef_id, references: :users, null: false, foreign_key: true
+      t.references :chef, references: :users, null: false, foreign_key: {to_table: :users}
       t.string :category
 
       t.timestamps
