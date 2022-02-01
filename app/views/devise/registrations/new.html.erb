@@ -1,4 +1,9 @@
-<h2>Sign up</h2>
+<div class="sign-up-container">
+  <div class="sign-up-banner">
+    <img src="https://images.rappi.com/cms-web/images/sign-in_3f701ac0c6.png" alt="banner-signup">
+  </div>
+  <div class="sign-up-form">
+    <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -21,5 +26,6 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+  </div>
+</div>
