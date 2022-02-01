@@ -1,11 +1,11 @@
 <div class="sign-up-container">
-
   <div class="sign-up-banner">
     <img src="https://images.rappi.com/cms-web/images/sign-in_3f701ac0c6.png" alt="banner">
   </div>
 
   <div class="sign-up-form mt-5">
     <h2 class= "text-center"><strong>Sign up</strong></h2>
+
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -45,7 +45,6 @@
     <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
 
   </div>

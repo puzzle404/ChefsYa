@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_02_01_215939) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +23,24 @@ ActiveRecord::Schema.define(version: 2022_02_01_215939) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+  create_table "dishes", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "price"
+    t.bigint "chef_id", null: false
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chef_id"], name: "index_dishes_on_chef_id"
+  end
+  create_table "reservations", force: :cascade do |t|
+    t.date "reservation_date"
+    t.text "observations"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +63,7 @@ ActiveRecord::Schema.define(version: 2022_02_01_215939) do
   end
 
   add_foreign_key "reviews", "users"
+  add_foreign_key "dishes", "users", column: "chef_id"
+  add_foreign_key "reservations", "users"
+
 end
