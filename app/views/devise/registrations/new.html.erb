@@ -1,9 +1,25 @@
-<h2>Sign up</h2>
+<div class="sign-up-container">
+
+  <div class="sign-up-banner">
+    <img src="https://images.rappi.com/cms-web/images/sign-in_3f701ac0c6.png" alt="banner">
+  </div>
+
+  <div class="sign-up-form mt-5">
+    <h2 class= "text-center"><strong>Sign up</strong></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs mt-4">
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "" }%>
+
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -15,11 +31,22 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :phone_number,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "" }%>
+    <%= f.input :address,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "" }%>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+  </div>
+</div>
