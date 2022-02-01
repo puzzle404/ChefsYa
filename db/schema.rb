@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_213553) do
+
+ActiveRecord::Schema.define(version: 2022_02_01_221034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dishes", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "price"
+    t.bigint "chef_id", null: false
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chef_id"], name: "index_dishes_on_chef_id"
+  end
 
   create_table "reservations", force: :cascade do |t|
     t.date "reservation_date"
@@ -43,5 +55,6 @@ ActiveRecord::Schema.define(version: 2022_02_01_213553) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dishes", "users", column: "chef_id"
   add_foreign_key "reservations", "users"
 end
