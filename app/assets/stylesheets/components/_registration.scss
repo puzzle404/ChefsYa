@@ -1,0 +1,23 @@
+.sign-up-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+
+}
+
+.sign-up-banner {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+}
+
+.sign-up-form {
+  align-items: center;
+  margin: 0 auto;
+}
+
+.form-inputs {
+
+}
