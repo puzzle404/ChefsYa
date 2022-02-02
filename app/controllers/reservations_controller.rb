@@ -1,6 +1,12 @@
 class ReservationsController < ApplicationController
+  before_action :find_reservation, only: %i[edit update destroy]
+
   def index
     @reservations = Reservation.all
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
   end
 
   def new
@@ -11,14 +17,31 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user
     @reservation.save
+
+    if @reservation.save
+      redirect_to reservation_path(@reservation)
+    else
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    @reservation.update(reservation_params)
     redirect_to reservation_path(@reservation)
   end
 
-  def show
-    @reservation = Reservation.find(params[:id])
+  def destroy
+    @reservation.destroy
+    redirect_to rooth_path
   end
 
   private
+
+  def find_reservation
+    @reservation = Reservation.find(params[:id])
+  end
 
   def reservation_params
     params.require(:reservation).permit(:reservation_date, :observations)
