@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_205611) do
+ActiveRecord::Schema.define(version: 2022_02_02_213518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,8 @@ ActiveRecord::Schema.define(version: 2022_02_02_205611) do
     t.text "comment"
     t.integer "rating"
     t.bigint "user_id", null: false
-    t.bigint "chef_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chef_id"], name: "index_reviews_on_chef_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -61,8 +59,8 @@ ActiveRecord::Schema.define(version: 2022_02_02_205611) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.text "bio"
-    t.text "address", null: false
-    t.integer "phone_number", null: false
+    t.text "address"
+    t.integer "phone_number"
     t.integer "rating"
     t.boolean "chef", default: false
     t.string "reset_password_token"
@@ -77,7 +75,6 @@ ActiveRecord::Schema.define(version: 2022_02_02_205611) do
   add_foreign_key "dishes", "users", column: "chef_id"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "users"
-  add_foreign_key "reviews", "users", column: "chef_id"
   add_foreign_key "selected_dishes", "dishes"
   add_foreign_key "selected_dishes", "reservations"
 end
