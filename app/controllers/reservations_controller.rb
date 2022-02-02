@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :find_reservation, only: %i[edit update destroy]
 
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(user_id: current_user.id)
   end
 
   def show
