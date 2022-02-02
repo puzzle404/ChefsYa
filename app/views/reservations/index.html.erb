@@ -1,0 +1,11 @@
+<div class="container m-4">
+  <h1>Reservaciones</h1>
+</div>
+
+<div class="container">
+<% @reservations.each do |reservation|  %>
+<p><%= reservation.reservation_date %></p>
+<p><%= reservation.observations %></p>
+<p><%= reservation.user_id %></p>
+<% end %>
+</div>
