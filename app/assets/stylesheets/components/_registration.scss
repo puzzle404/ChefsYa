@@ -1,11 +1,10 @@
 .sign-up-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-
+  display: flex;
+  background-color: white;
 }
 
 .sign-up-banner {
+  width: 40%;
   img {
     width: 100%;
     object-fit: cover;
@@ -18,6 +17,13 @@
   margin: 0 auto;
 }
 
+
 .form-inputs {
+  width: 350px ;
+}
+
+.btn-signup {
+  width: 100%;
+  height: 50px;
 
 }
