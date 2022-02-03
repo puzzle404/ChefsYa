@@ -2,6 +2,9 @@
 <div class="container">
   <div><h1><%= @chef.first_name %><%= @chef.last_name %></h1>
       <p>Rating <%= @chef.rating %></p></div>
+
+      <%= image_tag src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" %>
+
   <div><p><%= @chef.bio %></p></div>
   <div><% @categories.each do |cat| %>
   <%= image_tag "#{cat.category}.jpg" %>
