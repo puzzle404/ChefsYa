@@ -1,0 +1,4 @@
+<% @chefs.each do |chef| %>
+  <%= chef.email %>
+  <%= link_to "Ver platos", chef_dishes_path(chef.id) %>
+<% end %>
