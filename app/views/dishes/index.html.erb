@@ -1,12 +1,31 @@
 
 <div class="container">
- <div class="card">
-    <% @dishes.each do |dish| %>
-      <%= dish.title  %>
-      <%= dish.description  %>
-      <%= dish.price  %>
-      <%= dish.category %>
-      <%= dish.chef.email  %>
-    <% end %>
+  <div><h1><%= @chef.first_name %><%= @chef.last_name %></h1>
+      <p>Rating <%= @chef.rating %></p></div>
+  <div><p><%= @chef.bio %></p></div>
+  <div><% @categories.each do |cat| %>
+  <%= image_tag "#{cat.category}.jpg" %>
+     <h2><%= cat.category %></h2>
+  <% end %>
+
+</div>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <% @dishes.each do |dish| %>
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="https://www.holidify.com/images/cmsuploads/compressed/shoyu-ramen_20181227133143.jpg" alt="dish photo">
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= dish.title  %></h5>
+          <p><%= dish.chef.first_name  %></p>
+          <p class="card-text"><%= dish.description %></p>
+          <p class="card-text"><%= dish.price  %></p>
+          <p class="card-text"><small class="text-muted"><%= dish.category %></small></p>
+      </div>
+    </div>
   </div>
+  <% end %>
+</div>
 </div>

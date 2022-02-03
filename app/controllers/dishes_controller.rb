@@ -2,6 +2,7 @@ class DishesController < ApplicationController
   def index
     @chef = User.find(params[:chef_id])
     @dishes = Dish.where(chef_id: @chef)
+    @categories = Dish.select(:category).distinct.where(chef_id: @chef)
   end
 
   def new
@@ -22,7 +23,6 @@ class DishesController < ApplicationController
   def show
     @dish = Dish.find(params[:id])
   end
-
 
   private
 
