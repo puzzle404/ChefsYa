@@ -37,9 +37,13 @@
 }
 
 
+.chefs-container {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
 .chefs {
   margin-top: 50px;
-  margin-left: 60px;
 }
 
 .chefs h1 {
@@ -65,14 +69,20 @@ font-size: 19px;
 }
 
 .card-deck {
-  margin-left: 45px;
-  margin-right: 45px;
-  width: 1000px;
+  flex: none;
+  justify-content: space-between;
 }
 
+.card-chef {
+
+   height: 420px;
+   width: 200px;
+   border-radius: 15px;
+}
 
 .card img{
   height: 250px;
-  width: 350px;
   object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
