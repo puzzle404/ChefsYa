@@ -11,6 +11,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs mt-4">
+
+    <%= f.collection_radio_buttons :chef, [[true, 'Soy un Chef'] ,[false, 'Soy un cliente']],:first, :last,
+                label: "Este es el placeholder",
+                input_html: { autocomplete: "", class: "m-5"}  %>
+
+
+    <%= f.input :bio, :as => :hidden,
+                required: true,
+                autofocus: true,
+                input_html: { class: "input is-info" },
+                label_html: { class: "label"} %>
+
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
@@ -46,8 +58,5 @@
 <% end %>
 
     <%= render "devise/shared/links" %>
-
-
-
   </div>
 </div>
