@@ -3,7 +3,7 @@
 </div>
 
 <div class="container">
-  <%= simple_form_for [@chef, @dish] , url: chef_create_dish_path do |f| %>
+  <%= simple_form_for [@chef, @dish], url: chef_create_dish_path do |f| %>
   <%= f.input :title, placeholder: 'Ingrese el nombre del plato' %>
   <%= f.input :description %>
   <%= f.input :price %>

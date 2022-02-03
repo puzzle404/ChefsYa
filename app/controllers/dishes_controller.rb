@@ -1,26 +1,28 @@
 class DishesController < ApplicationController
   def index
-    @chef = User.find(params[:id])
+    @chef = User.find(params[:chef_id])
     @dishes = Dish.where(chef_id: @chef)
   end
 
   def new
-    @chef = User.find(params[:id])
+    @chef = User.find(params[:chef_id])
     @dish = Dish.new
   end
 
   def create
-    @chef = User.find(params[:id])
-    @dish = Dish.new(dish_params)
-    @dish.chef_id = @chef.id
-    @dish.save
-    redirect_to chef_show_dish_path(@dish)
+    if current_user.id == dish.chef_id
+      @chef = User.find(params[:chef_id])
+      @dish = Dish.new(dish_params)
+      @dish.chef_id = @chef.id
+      @dish.save
+      redirect_to dish_path(@dish)
+    end
   end
 
   def show
-    @chef = User.find(params[:user_id])
     @dish = Dish.find(params[:id])
   end
+
 
   private
 

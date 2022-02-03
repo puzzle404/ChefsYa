@@ -1,10 +1,12 @@
 
 <div class="container">
-<% @dishes.each do |dish| %>
-  <%= dish.title  %>
-  <%= dish.description  %>
-  <%= dish.price  %>
-  <%= dish.category %>
-  <%= dish.chef.email  %>
-<% end %>
+ <div class="card">
+    <% @dishes.each do |dish| %>
+      <%= dish.title  %>
+      <%= dish.description  %>
+      <%= dish.price  %>
+      <%= dish.category %>
+      <%= dish.chef.email  %>
+    <% end %>
+  </div>
 </div>
