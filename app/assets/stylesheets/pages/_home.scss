@@ -86,3 +86,29 @@ font-size: 19px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
+.navbar-lewagon {
+  background-color: black;
+}
+
+
+.logsign-container {
+  display: flex;
+}
+
+.btn-light {
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+.btn-light text {
+  padding: 3px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.options-navbar {
+  display: flex;
+}

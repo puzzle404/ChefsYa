@@ -26,8 +26,14 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <div>
+        <li class="nav-item nav-sign-log">
+        </div>
+          <div class="options-navbar mr-5">
+            <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3" %>
+            <%= link_to "Logueate", new_user_session_path, class: "nav-link mr-3" %>
+            <%= link_to "Registrate", new_user_session_path, class: "btn btn-light" %>
+          </div>
         </li>
       <% end %>
     </ul>
