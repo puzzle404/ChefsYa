@@ -63,3 +63,16 @@ font-size: 19px;
   font-weight: 800;
   font-size: 20px;
 }
+
+.card-deck {
+  margin-left: 21px;
+  margin-right: 21px;
+  width: 1000px;
+}
+
+
+.card img{
+  height: 250px;
+  width: 350px;
+  object-fit: cover;
+}
