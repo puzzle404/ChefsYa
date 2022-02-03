@@ -26,13 +26,22 @@
           </div>
         </li>
       <% else %>
-        <div>
+
+        <div class="search-box">
+            <input class="search-txt" type="text" name= '' placeholder="¿Qué quieres que te cocinen?">
+            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+          </div>
+
+
+
         <li class="nav-item nav-sign-log">
-        </div>
+          </div>
           <div class="options-navbar mr-5">
-            <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3" %>
-            <%= link_to "Logueate", new_user_session_path, class: "nav-link mr-3" %>
-            <%= link_to "Registrate", new_user_session_path, class: "btn btn-light" %>
+            <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
+            <%= link_to new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" do %>
+              <i class="far fa-user mr-1"></i> Iniciar Sesion
+            <% end %>
+            <%= link_to "Registrate", new_user_session_path, class: "boton-signup-navbar" %>
           </div>
         </li>
       <% end %>
