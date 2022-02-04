@@ -1,0 +1,24 @@
+.container-card-chef {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.card1-chef {
+  display: flex;
+  align-items: center;
+  width: 900px;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.card1-chef img {
+  height: 100%;
+  width: 400px;
+  object-fit: cover;
+}
+
+.card1-chef .card1-chef-info{
+  padding: 20px;
+  text-align: center;
+}
