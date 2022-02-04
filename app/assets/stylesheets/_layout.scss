@@ -7,24 +7,52 @@
 .container-card-chef {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 30px;
 }
 
 .card1-chef {
   display: flex;
   align-items: center;
-  width: 900px;
+  width: 1000px;
   background-color: white;
   border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+.card1-chef:hover {
+  opacity: 85%;
+  transform: scale(1.02)
 }
 
 .card1-chef img {
   height: 100%;
   width: 400px;
   object-fit: cover;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .card1-chef .card1-chef-info{
   padding: 20px;
-  text-align: center;
+  text-align: left;
+}
+
+.container-card-chef a {
+  text-decoration: none;
+  color: black;
+}
+
+.container-card-chef a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
