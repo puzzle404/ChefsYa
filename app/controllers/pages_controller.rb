@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    @chefs = User.where(chef: true).last(3).reverse
   end
 
   def chefs
