@@ -10,6 +10,8 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    @chef = User.find(params[:chef_id])
+    @dishes = Dish.where(chef_id: @chef)
     @reservation = Reservation.new
   end
 
