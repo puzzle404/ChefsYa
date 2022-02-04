@@ -23,15 +23,19 @@
           </div>
         </div>
 
-<div class="description-card border-bottom py-4 mt-3">
-  <div class="">
-    <h2>Acerca de <%= @chef.first_name %></h2>
+<div class="description-card border-bottom py-4 mt-3" >
+  <div style="height:100%">
+
     <div class="d-flex justify-content-between alto-iconos">
+      <div>
+        <h2>Acerca de <%= @chef.first_name %></h2>
       <p class="bio-card"><%= @chef.bio %></p>
+      </div>
+
        <div class=""><h2 class=" ">Tipo de cocina</h2>
         <div class="d-flex icons-cat">
           <% @categories.each do |cat| %>
-        <div>
+        <div class="mr-4">
           <%= image_tag "#{cat.category}.jpg", style: "width: 50px", style: "height: 50px" %>
           <h5><%= cat.category %></h5>
         </div>
