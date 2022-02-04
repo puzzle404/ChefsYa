@@ -6,6 +6,9 @@
 <%= simple_form_for (@reservation), url: reservations_path do |f| %>
 <%= f.input :reservation_date, placeholder: 'Selecciona la fecha deseada' %>
 <%= f.input :observations %>
+<%# <%= f.association :dishes, colletction: Dish.all  %>
+
 <%= f.submit "Reservar", class: "btn btn-primary"%>
 <% end %>
 </div>
+<%# f.association :product, collection: Product.all.map { |product| [product.name, product.id, {data: {description: product.description}}] } %>
