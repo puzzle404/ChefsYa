@@ -1,4 +1,67 @@
-<% @chefs.each do |chef| %>
-  <%= chef.email %>
-  <%= link_to "Ver platos", chef_dishes_path(chef.id) %>
-<% end %>
+<div class="container m-5">
+  <h1><strong>Chefs disponibles para tu fecha</strong></h1>
+  <h3></h3>
+</div>
+
+<div class="container m-5 text-center">
+  <strong> Filtros </strong>
+</div>
+
+
+<div class="border-bottom m-5"></div>
+
+<div class="container-chefs">
+  <div class="row">
+    <div class="col-8">
+      <div class="container-card-chef ml-5">
+      <% @chefs.each do |chef| %>
+        <div class="card1-chef">
+          <img src='https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'  alt="No carga la imagen"/>
+          <div class="card1-chef-info">
+            <h5><strong><%= chef.first_name %> <%= chef.last_name %></strong></h5>
+            <p><%= chef.bio %></p>
+            <p><small class="text-muted">
+            <% @dishes.each do |dish| %>
+                <%= image_tag "#{dish.category}.jpg", style: 'height:80px;width:auto;' if dish.chef_id == chef.id && dish.category %>
+            <% end %>
+            </small></p>
+            <p><small class="text-muted"> ✔  <%=chef.rating %> (+300 calificaciones) </small></p>
+            <%= link_to "Ver platos", chef_dishes_path(chef.id), class: 'btn btn-dark' %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+          MAPA
+    </div>
+  </div>
+</div>
+
+<div class="border-bottom m-5"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="card-deck">
+      <% @chefs.each do |chef| %>
+        <div class="card text-center rounded">
+          <img  src='https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80' width="300"
+          height="100" alt="No carga la imagen">
+          <div class="card-body">
+              <h5 class="card-title"><strong><%= chef.first_name %> <%= chef.last_name %></strong></h5>
+              <p class="card-text"><small class="text-muted"> ✔  <%=chef.rating %> (+300 calificaciones) </small></p>
+              <% @dishes.each do |dish| %>
+                <p class="card-text"><small class="text-muted"> <%= dish.category if dish.chef_id == chef.id && dish.category %></small></p>
+              <% end %>
+              <%= link_to "Ver platos", chef_dishes_path(chef.id), class: 'btn btn-dark' %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+          MAPA
+    </div>
+  </div>
+</div>

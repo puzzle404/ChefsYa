@@ -6,5 +6,7 @@ class PagesController < ApplicationController
 
   def chefs
     @chefs = User.where(chef: true)
+    @dishes = Dish.all
+    # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
   end
 end
