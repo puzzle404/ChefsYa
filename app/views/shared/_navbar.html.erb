@@ -11,11 +11,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
+       <div class="search-box">
+            <input class="search-txt" type="text" name= '' placeholder="¿Qué quieres que te cocinen?">
+            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+          </div>
+
+         <li class="nav-item nav-sign-log">
+          <div class="options-navbar mr-5">
+            <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
+            <%= link_to "Contratar Chef", new_user_session_path, class: "boton-signup-navbar" %>
+          </div>
+        </li>
+
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -35,7 +44,6 @@
 
 
         <li class="nav-item nav-sign-log">
-          </div>
           <div class="options-navbar mr-5">
             <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
             <%= link_to new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" do %>
