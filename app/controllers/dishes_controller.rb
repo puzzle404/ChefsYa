@@ -6,17 +6,19 @@ class DishesController < ApplicationController
   end
 
   def new
-    @chef = User.find(params[:chef_id])
+    # @chef = User.find(params[:chef_id])
     @dish = Dish.new
   end
 
   def create
-    if current_user.id == dish.chef_id
-      @chef = User.find(params[:chef_id])
-      @dish = Dish.new(dish_params)
-      @dish.chef_id = @chef.id
-      @dish.save
+    @dish = Dish.new(dish_params)
+    if current_user.chef
+      @dish.chef_id = current_user.id
+      if @dish.save
       redirect_to dish_path(@dish)
+      else
+      render :new
+      end
     end
   end
 

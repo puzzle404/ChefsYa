@@ -77,3 +77,17 @@
   </div>
 <%# <div class="container mt-3 mb-3"><h2 class="btn-dark p-2 text-center rounded">Resumen reserva</h2></div> %>
 <div class="container  mt-3 mb-3"><button type="button" class="btn btn-dark container p-4 ">Resumen reserva</button></div>
+
+<div class="container m-4">
+  <h1>Nueva Reserva</h1>
+</div>
+
+<div class="container">
+<%= simple_form_for (Reservation.new) do |f| %>
+<%= f.input :selected_dishes_id, as: :check_boxes, collection: @dishes, include_hidden: false %>
+
+<%# <%= f.association :dishes, colletction: Dish.all  %>
+
+<%= f.submit "Reservar", class: "btn btn-primary"%>
+<% end %>
+</div>

@@ -1,12 +1,14 @@
 class ReservationsController < ApplicationController
-  before_action :find_reservation, only: %i[edit update destroy]
+  before_action :find_reservation, only: %i[edit show update destroy]
 
   def index
     @reservations = Reservation.where(user_id: current_user.id)
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @selected_dishes = @reservation.selected_dishes
+    @dishes = Dish.all
+
   end
 
   def new
@@ -16,20 +18,32 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = current_user
-    @reservation.save
+    @reservation = Reservation.new
+    @reservation.user = current_user
+    selected_dishes_array = reservation_params[:selected_dishes_id]
 
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+
+      selected_dishes_array.each do |dish_id|
+        SelectedDish.create!(dish_id: dish_id, reservation_id: @reservation.id)
+
+      end
+      #redirigir al edit de la reservation, tambien agregar los campos de obs, fecha @selected_dishes = @reservation.selected_dishes
+
+      redirect_to edit_reservation_path(@reservation)
     else
       render :new
     end
   end
 
-  def edit; end
+  def edit
+
+    @selected_dishes = @reservation.selected_dishes
+    @dishes = Dish.all
+  end
 
   def update
+
     @reservation.update(reservation_params)
     redirect_to reservation_path(@reservation)
   end
@@ -46,6 +60,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:reservation_date, :observations)
+    params.require(:reservation).permit(:reservation_date, :observations, selected_dishes_id: [])
   end
 end
