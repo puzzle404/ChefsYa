@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @chefs = User.where(chef: true).last(3).reverse
+
   end
 
   def chefs
@@ -10,4 +11,6 @@ class PagesController < ApplicationController
     @dishes = Dish.all
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
   end
+
+
 end
