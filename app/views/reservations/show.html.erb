@@ -1,19 +1,22 @@
 
-<div class="container">
-  <h1>Reserva</h1>
-</div>
-
-<div class="card">
-  <div class="card-body">
-  <% @selected_dishes.each do |selected| %>
-
-  <% @dishes.each do |dish| %>
-
-    <%= dish.title if dish.id == selected.dish_id %>
-  <% end %>
-<% end %>
-    <h3 class="card-title"> Cliente: <%= @reservation.user_id %></h3>
-    <p class="card-text"> Fecha de la reserva:<%= @reservation.reservation_date %> </p>
-    <p class="card-text"> Observaciones del cliente:<%= @reservation.observations %></p>
+<div class="container justify-content-center  ">
+ <div class="align-middle">
+ </div>
+    <h1 class="text-center mt-4">Reserva</h1>
+      <div class="cards card mt-4 mx-auto " style="max-width: 550px;">
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <div class="card-body">
+              <% @selected_dishes.each do |selected| %>
+                <% @dishes.each do |dish| %>
+                  <h4><%= dish.title if dish.id == selected.dish_id %></h4>
+                <% end %>
+              <% end %>
+              <p class="card-title"><b>Cliente: <%= @reservation.user_id  %> </b></p>
+              <p class="card-text">Fecha de la reserva:<%= @reservation.reservation_date %></p>
+              <p class="card-text">Observaciones del cliente:<%= @reservation.observations %></p>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
-</div>

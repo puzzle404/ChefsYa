@@ -18,6 +18,9 @@
 
          <li class="nav-item nav-sign-log">
           <div class="options-navbar mr-5">
+            <% if current_user.chef == false %>
+            <%= link_to "Mis reservas", reservations_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
+            <% end %>
             <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
             <%= link_to "Contratar Chef", new_user_session_path, class: "boton-signup-navbar" %>
           </div>
@@ -29,7 +32,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to current_user.email, "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
