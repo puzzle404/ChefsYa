@@ -5,9 +5,17 @@
 
 <div class="container m-5 text-center">
   <div class="row">
-    <% @dishes.each do |dish| %>
-      <%= image_tag "#{dish.category}.jpg", style: 'height:120px;width:auto;' %>
-    <% end %>
+      <% categories = [] %>
+      <% @dishes.each do |dish| %>
+        <%# <% unless dish.category == nil %>
+        <% unless categories.include?(dish.category) %>
+          <% categories << dish.category %>
+        <% end %>
+      <% end %>
+      <% categories.each do |cat| %>
+
+          <%= image_tag "#{cat}.jpg", style: 'height:120px;width:auto;'%>
+     <% end %>
   </div>
 </div>
 

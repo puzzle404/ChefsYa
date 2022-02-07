@@ -10,6 +10,8 @@ class PagesController < ApplicationController
     @chefs = User.where(chef: true)
     @dishes = Dish.all
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
+
+    # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
   end
 
   def chefs_dashboard

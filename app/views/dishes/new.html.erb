@@ -3,7 +3,16 @@
     <%= f.input :title, placeholder: 'Nombre del plato' %>
     <%= f.input :description, placeholder: 'Descripcion' %>
     <%= f.input :price, placeholder: 'Price' %>
-    <%= f.input :category, :collection => ["peruana" , "italiana", "mexicana", "asiática", "thai", "china", "mediterránea" ]%>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :category, :collection => ["peruana" , "italiana", "mexicana", "asiatica", "thai", "china", "mediterranea" ], input_html: {class: 'test'} %>
     <%= f.submit "Crear plato", class: "btn btn-primary"%>
   <% end %>
 </div>
+
+<script>
+  var div =  document.querySelector('.dish_category');
+  div.classList.remove('select');
+
+  var label = document.querySelector('.dish_category>label');
+  label.classList.remove('select')
+</script>

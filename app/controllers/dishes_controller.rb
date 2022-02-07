@@ -23,6 +23,7 @@ class DishesController < ApplicationController
 
   def show
     @dish = Dish.find(params[:id])
+
   end
 
   def edit
@@ -37,6 +38,6 @@ class DishesController < ApplicationController
   private
 
   def dish_params
-    params.require(:dish).permit(:title, :description, :price, :category)
+    params.require(:dish).permit(:title, :description, :price, :category, photos: [])
   end
 end
