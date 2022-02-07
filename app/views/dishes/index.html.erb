@@ -6,11 +6,23 @@
       <p><i>Rating</i> <%= @chef.rating %></p></div>
 
       <div class="row">
-        <div class="col-6"><%= image_tag src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" %>
+        <div class="col-6">
+
+        <% if @chef.photo.key == nil %>
+
+        <% else %>
+          <%= cl_image_tag chef.photo.key  %>
+        <% end %>
+
+
+<%# <% @dishes.each do |dish| %>
+<%# <% dish.photos.each do |photo| %>
+
+
         </div>
           <div class="col-6 d-flex">
             <div class="img-bio col-6 d-flex align-content-stretch flex-wrap">
-              <div class="mb-5"><%= image_tag src="https://images.unsplash.com/photo-1590091626142-167ee3798ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80 " %>
+              <div class="mb-5"><%= cl_image_tag  photo.key %> %>
               </div>
               <div class=""><%= image_tag src="https://images.unsplash.com/photo-1608634070674-2db08b533d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" %>
               </div>

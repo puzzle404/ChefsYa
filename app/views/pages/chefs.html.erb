@@ -13,7 +13,6 @@
         <% end %>
       <% end %>
       <% categories.each do |cat| %>
-
           <%= image_tag "#{cat}.jpg", style: 'height:120px;width:auto;'%>
      <% end %>
   </div>
@@ -32,7 +31,11 @@
       <% @chefs.each do |chef| %>
         <%= link_to chef_dishes_path(chef.id) do %>
         <div class="card1-chef">
-          <img src='https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'  alt="No carga la imagen"/>
+        <% if chef.photo.key == nil %>
+
+        <% else %>
+          <%= cl_image_tag chef.photo.key  %>
+        <% end %>
           <div class="card1-chef-info">
             <h5><strong><%= chef.first_name %> <%= chef.last_name %></strong></h5>
             <p><%= chef.bio %></p>
