@@ -6,7 +6,6 @@ class DishesController < ApplicationController
   end
 
   def new
-    # @chef = User.find(params[:chef_id])
     @dish = Dish.new
   end
 
@@ -34,6 +33,7 @@ class DishesController < ApplicationController
     @dish = Dish.find(dish_params)
     redirect_to dish_path(@dish)
   end
+
   private
 
   def dish_params
