@@ -6,11 +6,15 @@ Rails.application.routes.draw do
   resources :dishes, only: %i[show new create edit update] do
     resources :selected_dishes, only: :create
   end
-  # post "chefs/:chef_id/dishes", to: "dishes#create", as: :chef_create_dish
   get "chefs/:chef_id/dishes", to: "dishes#index", as: :chef_dishes
-  # get "chefs/:chef_id/dishes/new", to: "dishes#new", as: :chef_new_dish
-  # get "chefs/:id/dishes/:id", to: "dishes#show", as: :chef_show_dish
   get "/chefs", to:"pages#chefs", as: :chefs
-  # get "/chefs/:chef_id/reservations/new", to: "reservations#new"
 
+  # Path que llegar al Dashboard de los chefs
+  get "pages/chefs_dashboard", to: "pages#chefs_dashboard", as: :chefs_dashboard
 end
+
+# Rutas no utilizadas de momento:
+# post "chefs/:chef_id/dishes", to: "dishes#create", as: :chef_create_dish
+# get "/chefs/:chef_id/reservations/new", to: "reservations#new"
+# get "chefs/:chef_id/dishes/new", to: "dishes#new", as: :chef_new_dish
+# get "chefs/:id/dishes/:id", to: "dishes#show", as: :chef_show_dish

@@ -15,19 +15,27 @@
             <input class="search-txt" type="text" name= '' placeholder="¿Qué quieres que te cocinen?">
             <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
           </div>
-
+        <!-- Agregar opciones al navbar según el rol (usuario o chef) -->
          <li class="nav-item nav-sign-log">
           <div class="options-navbar mr-5">
             <% if current_user.chef == false %>
             <%= link_to "Mis reservas", reservations_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
+            <% else %>
+            <%= link_to "Mis reservas", reservations_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
             <% end %>
+            <% if current_user.chef == false %>
             <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
-            <%= link_to "Contratar Chef", new_user_session_path, class: "boton-signup-navbar" %>
+            <% end %>
+            <%= link_to "Contratar Chef", chefs_path, class: "boton-signup-navbar" %>
           </div>
         </li>
 
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+        <li class="nav-item">
+        <% if current_user.chef == false %>
+          <%= link_to "Home", root_path , class: "nav-link" %>
+        <% else %>
+          <%= link_to "Home", chefs_dashboard_path , class: "nav-link mr-3 boton-chef-login-navbar" %>
+        <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -48,11 +56,11 @@
 
         <li class="nav-item nav-sign-log">
           <div class="options-navbar mr-5">
-            <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
+            <%= link_to "Hazte Cocinero", new_user_registration_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
             <%= link_to new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" do %>
               <i class="far fa-user mr-1"></i> Iniciar Sesion
             <% end %>
-            <%= link_to "Registrate", new_user_session_path, class: "boton-signup-navbar" %>
+            <%= link_to "Registrate", new_user_registration_path, class: "boton-signup-navbar" %>
           </div>
         </li>
       <% end %>

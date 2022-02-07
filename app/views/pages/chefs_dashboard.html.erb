@@ -1,0 +1,33 @@
+<!-- <%= render 'shared/sidebar' %> -->
+
+<div class="container-chefs">
+  <div class="row">
+  <!-- Agregar items al Navbar lateral o Sidebar -->
+    <div class="col-2" id="navbar-dashboard">
+      <div class="mt-5 ml-2"> Usuario: <%= current_user.first_name %> </div>
+      <div class="border-bottom mt-5"></div>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-10">
+      <div class="container m-5">
+        <h1>Chefs Dashboard</h1>
+      </div>
+      <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibGVua2FtY2YiLCJhIjoiY2t5NHdobThzMDN0azJvcnY5Z2t2YXF1YiJ9.ek9ZRNF1xIlF39FNXLFEQg'>
+    </div>
+  </div>
+</div>
+
+<div class="border-bottom mb-5"></div>

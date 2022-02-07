@@ -124,6 +124,10 @@ font-size: 19px;
     font-weight: bold;
 }
 
+.nav-link  {
+  color: white;
+}
+
 .options-navbar {
   display: flex;
   justify-content: center;
@@ -193,4 +197,8 @@ font-size: 19px;
 
 .search-box:hover > .search-btn{
   background: black;
+}
+
+#navbar-dashboard {
+  background-color: rgb(179, 176, 176);
 }

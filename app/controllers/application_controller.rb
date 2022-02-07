@@ -9,4 +9,22 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :bio, :address, :phone_number])
   end
+
+  # Métodos para redireccionar a los usuarios según su rol al momento de hacer Sign in
+
+  protected
+
+  def after_sign_in_path_for(resource)
+    # return the path based on resource
+    if current_user.chef
+      chefs_dashboard_path
+    else
+      root_path
+    end
+  end
+
+  def after_sign_out_path_for(resource)
+    # return the path based on resource
+    root_path
+  end
 end
