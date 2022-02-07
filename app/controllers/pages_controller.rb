@@ -12,5 +12,7 @@ class PagesController < ApplicationController
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
   end
 
-
+  def chefs_dashboard
+    @chefs = User.where(chef: true)
+  end
 end

@@ -1,3 +1,4 @@
+<%@chef = User.find(params[:chef_id]) %>
 
 
 <div class="container mt-3">
@@ -85,7 +86,7 @@
 <div class="container">
 <%= simple_form_for (Reservation.new) do |f| %>
 <%= f.input :selected_dishes_id, as: :check_boxes, collection: @dishes, include_hidden: false %>
-
+<%= f.input :chef_id, as: :hidden, input_html: { value: @chef.id } %>
 <%# <%= f.association :dishes, colletction: Dish.all  %>
 
 <%= f.submit "Reservar", class: "btn btn-primary"%>

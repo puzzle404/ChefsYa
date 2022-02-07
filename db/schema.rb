@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_213518) do
+ActiveRecord::Schema.define(version: 2022_02_06_230511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_213518) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "chef_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -39,10 +40,8 @@ ActiveRecord::Schema.define(version: 2022_02_02_213518) do
     t.text "comment"
     t.integer "rating"
     t.bigint "user_id", null: false
-    t.bigint "chef_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chef_id"], name: "index_reviews_on_chef_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -77,7 +76,6 @@ ActiveRecord::Schema.define(version: 2022_02_02_213518) do
   add_foreign_key "dishes", "users", column: "chef_id"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "users"
-  add_foreign_key "reviews", "users", column: "chef_id"
   add_foreign_key "selected_dishes", "dishes"
   add_foreign_key "selected_dishes", "reservations"
 end
