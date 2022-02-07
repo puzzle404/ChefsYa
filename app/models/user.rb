@@ -6,5 +6,6 @@ class User < ApplicationRecord
   # has_one :photo
   has_many :reviews
   has_many :dishes
+  has_one_attached :photo
   scope :chef, -> { where(chef: true) }
 end

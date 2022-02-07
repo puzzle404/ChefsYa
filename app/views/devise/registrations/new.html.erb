@@ -1,4 +1,4 @@
-<div class="sign-up-container">
+<div class="sign-up-container ">
   <div class="sign-up-banner">
     <img src="https://images.rappi.com/cms-web/images/sign-in_3f701ac0c6.png" alt="banner">
   </div>
@@ -17,11 +17,6 @@
                 input_html: { autocomplete: "", class: "m-5"}  %>
 
 
-    <%= f.input :bio, :as => :hidden,
-                required: true,
-                autofocus: true,
-                input_html: { class: "input is-info" },
-                label_html: { class: "label"} %>
 
     <%= f.input :first_name,
                 required: true,
@@ -40,6 +35,13 @@
                 autofocus: true,
                 input_html: { class: "input is-info" },
                 label_html: { class: "label"} %>
+    <%= f.input :bio,
+                required: true,
+                autofocus: true,
+                input_html: { class: "input is-info" },
+                label_html: { class: "label"} %>
+    <%= f.input :photo, as: :file %>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -57,6 +59,19 @@
   </div>
 <% end %>
 
+
     <%= render "devise/shared/links" %>
   </div>
 </div>
+<%# <script>
+  var div =  document.querySelector('.dish_category');
+</script>
+ %>
+
+<%# <script>
+  var div =  document.querySelector('.dish_category');
+  div.classList.remove('select');
+
+  var label = document.querySelector('.dish_category>label');
+  label.classList.remove('select')
+</script> %>
