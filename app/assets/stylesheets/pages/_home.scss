@@ -138,6 +138,13 @@ font-size: 19px;
   color: grey;
 }
 
+.nav-item{
+  transition: 0.8ms;
+}
+
+.nav-item:hover{
+  background-color: black;
+}
 
 .boton-signup-navbar:hover {
   background-color: rgb(170, 170, 170);
@@ -200,5 +207,42 @@ font-size: 19px;
 }
 
 #navbar-dashboard {
-  background-color: rgb(179, 176, 176);
+  background-color: #373434;
+  padding-right: 0px;
+  color: white;
+	position: sticky;
+	top: 0%;
+}
+
+#dashboard-card-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#my-reservations-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  margin-top: 20px;
+  width: 500px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1598762888384-ef5fd4345ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80);
+  background-size: cover;
+  opacity: .8;
+  transform: scale(0.9);
+  transition: .8s;
+}
+
+#my-reservations-card:hover {
+  opacity: 1;
+  transform: scale(1.01);
+  text-decoration: none;
 }
