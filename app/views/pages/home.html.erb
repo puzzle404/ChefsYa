@@ -1,2 +1,54 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+
+  <div class="value-proposition">
+    <h1> Los mejores chefs de tu zona, </h1>
+    <h1> cocinando en tu casa </h1>
+    <p>Viví una experiencia única desde el comfort de tu hogar</p>
+  </div>
+</div>
+
+<div class="chefs-container">
+
+  <div class="chefs">
+    <h1> Chefs de primer nivel cocinan para vos</h1>
+    <p>Los mejores chefs cocinan sus mejores platos todas las semanas</p>
+    <div class="ver-chefs mt-5">
+       <%= link_to "Ver todos los chefs ->", chefs_path, class:"text-dark ver-chefs" %>
+    </div>
+  </div>
+
+
+  <div class="card-deck mt-5">
+    <div class="card card-chef">
+     <img class="card-img-top" src="https://images.pexels.com/photos/3351927/pexels-photo-3351927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title text-center">Chef Name</h5>
+        <p class="card-text text-center">Chef Rating</p>
+        <div class="boton-descubrilo text-center">
+          <%= link_to "Descubrilo", root_path, class: "btn btn-dark" %>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="card card-chef">
+<img class="card-img-top" src="https://images.pexels.com/photos/3351927/pexels-photo-3351927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">    <div class="card-body">
+      <h5 class="card-title text-center">Chef Name</h5>
+      <p class="card-text text-center">Chef Rating</p>
+      <div class="boton-descubrilo text-center">
+          <%= link_to "Descubrilo", root_path, class: "btn btn-dark " %>
+        </div>
+    </div>
+  </div>
+
+  <div class="card card-chef">
+<img class="card-img-top" src="https://images.pexels.com/photos/3351927/pexels-photo-3351927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">    <div class="card-body">
+      <h5 class="card-title text-center">Chef Name</h5>
+      <p class="card-text text-center">Chef Rating</p>
+      <div class="boton-descubrilo text-center">
+          <%= link_to "Descubrilo", root_path, class: "btn btn-dark " %>
+        </div>
+    </div>
+  </div>
+</div>
+</div>

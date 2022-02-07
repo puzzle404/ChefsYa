@@ -1,0 +1,42 @@
+class DishesController < ApplicationController
+  def index
+    @chef = User.find(params[:chef_id])
+    @dishes = Dish.where(chef_id: @chef)
+    @categories = Dish.select(:category).distinct.where(chef_id: @chef)
+  end
+
+  def new
+    # @chef = User.find(params[:chef_id])
+    @dish = Dish.new
+  end
+
+  def create
+    @dish = Dish.new(dish_params)
+    if current_user.chef
+      @dish.chef_id = current_user.id
+      if @dish.save
+      redirect_to dish_path(@dish)
+      else
+      render :new
+      end
+    end
+  end
+
+  def show
+    @dish = Dish.find(params[:id])
+  end
+
+  def edit
+    @dish = Dish.find(params[:id])
+  end
+
+  def update
+    @dish = Dish.find(dish_params)
+    redirect_to dish_path(@dish)
+  end
+  private
+
+  def dish_params
+    params.require(:dish).permit(:title, :description, :price, :category)
+  end
+end

@@ -1,0 +1,21 @@
+<div class="container mt-5 ">
+  <h1 class= "text-center"> Reservaciones</h1>
+</div>
+
+<div class="container justify-content-center" style="width:550px">
+  <% @reservations.each do |reservation|  %>
+    <%= link_to reservation_path(reservation) do %>
+      <div class="cards card mt-4 mr-3 col-6" style="max-width: 550px;">
+        <div class="row no-gutters">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h4 class="card-title"><b><%= reservation.reservation_date  %> </b></h4>
+                <p class="card-text">$<%= reservation.observations%></p>
+                <p class="card-text">$<%= reservation.user_id %></p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  <% end %>
+</div>

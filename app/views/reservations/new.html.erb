@@ -1,0 +1,16 @@
+<div class="container m-4">
+  <h1>Nueva Reserva</h1>
+</div>
+
+<div class="container">
+<%= simple_form_for (@reservation), url: reservations_path do |f| %>
+<%= f.input :reservation_date, placeholder: 'Selecciona la fecha deseada' %>
+<%= f.input :observations %>
+<%= f.input :selected_dishes_id, as: :check_boxes %>
+
+<%# <%= f.association :dishes, colletction: Dish.all  %>
+
+<%= f.submit "Reservar", class: "btn btn-primary"%>
+<% end %>
+</div>
+<%# f.association :product, collection: Product.all.map { |product| [product.name, product.id, {data: {description: product.description}}] } %>

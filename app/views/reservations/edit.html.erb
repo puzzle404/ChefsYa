@@ -1,0 +1,45 @@
+
+
+<div class="container res-shadow">
+
+<div class="container mt-5 mb-5 ">
+<h1>Nueva Reserva</h1>
+<h3> Platos elegidos</h3>
+  <div class=" border row justify-content-center pb-4 mx-0">
+  <% sum=0 %>
+    <% @selected_dishes.each do |selected| %>
+      <% @dishes.each do |dish| %>
+        <% if dish.id == selected.dish_id %>
+          <% sum = sum + dish.price %>
+        <div class="cards card mt-4 mr-3 col-6" style="max-width: 550px;">
+          <div class="row no-gutters">
+            <div div class="col-md-4">
+              <img src="https://www.holidify.com/images/cmsuploads/compressed/shoyu-ramen_20181227133143.jpg" style="height:100%" alt="dish photo">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title"><b><%= dish.title %> </b></h4>
+                  <p class="card-text">$<%= dish.price %></p>
+                  <p class="card-text"><i><small>Categoría: </small><small class="text-muted"><%= dish.category %></small></i></p>
+                </div>
+            </div>
+          </div>
+       </div>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
+<div class="container ">
+  <h2 class=" ">Total: $<%= sum %></h2>
+</div>
+<div class="container mt-5 mb-5 ">
+<%= simple_form_for (@reservation), url: reservation_path do |f| %>
+<%= f.input :reservation_date, placeholder: 'Selecciona la fecha deseada' %>
+<%= f.input :observations %>
+<%= f.submit "Reservar", class: "btn btn-success  btn-width centered" %>
+<% end %>
+</div>
+</div>
+</div>
