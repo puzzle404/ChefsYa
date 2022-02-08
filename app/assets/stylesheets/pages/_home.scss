@@ -74,7 +74,6 @@ font-size: 19px;
 }
 
 .card-chef {
-
    height: 420px;
    width: 200px;
    border-radius: 15px;
@@ -84,7 +83,7 @@ font-size: 19px;
   height: 250px;
   object-fit: cover;
   border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
 
 }
 
@@ -195,8 +194,6 @@ font-size: 19px;
 
 }
 
-
-
 .search-box:hover > .search-txt{
   width: 240px;
   padding: 0 6px;
@@ -204,6 +201,10 @@ font-size: 19px;
 
 .search-box:hover > .search-btn{
   background: black;
+}
+
+.form-control {
+
 }
 
 #navbar-dashboard {
