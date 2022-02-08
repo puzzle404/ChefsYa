@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :dishes
   has_one_attached :photo
+  validates :photo, presence: true
   scope :chef, -> { where(chef: true) }
 end
