@@ -31,7 +31,8 @@ class DishesController < ApplicationController
   end
 
   def update
-    @dish = Dish.find(dish_params)
+    @dish = Dish.find(params[:id])
+    @dish.update(dish_params)
     redirect_to dish_path(@dish)
   end
 
