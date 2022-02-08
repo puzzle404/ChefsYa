@@ -3,41 +3,84 @@
    font-family: 'Gilroy-ExtraBold';
    src: url('/assets/fonts/Gilroy-ExtraBold.otf')
 }
+
+
 .banner {
-    display: flex;
-    background-size: cover;
-    background-position: center;
-    padding: 150px 0;
-    height: 600px;
-    align-items: center;
-    justify-content: center;
+  background-color: #f1f7f4;
+  background-position: left;
+  background-size: cover;
+  position: relative;
+  padding: 13% 0;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content.center-column {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
+
+  h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 46px;
+  width: 72%;
+  margin: 0 auto 20px;
+}
+
+  p {
+  color: white;
+  font-family: 'GT Walsheim Pro';
+  font-style: medium;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+}
+
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
 }
 
 
-.value-proposition {
-  margin-bottom: 100px;
+.banner:after {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent !important;
+    background: black !important;
+    opacity: 0.35 !important;
+    top: 0;
 }
 
-
-.value-proposition h1 {
-
-    color: white;
-    text-align: center;
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 55px;
-
-}
-
-.value-proposition p {
-    color: white;
-    font-family: 'GT Walsheim Pro';
-    font-style: medium;
-    font-weight: normal;
-    font-size: 26px;
-    text-align: center;
-}
 
 
 .chefs-container {
@@ -53,15 +96,18 @@
 font-family: 'Gilroy';
 font-style: normal;
 font-weight: 800;
-font-size: 26px;
+font-size: 28px;
+  span {
+    color: #7AD7A7;
+  }
 }
 
 
 .chefs p {
-font-family: 'Gilroy';
-font-style: normal;
-font-weight: 500;
-font-size: 19px;
+  font-family: 'GT Walsheim Pro';
+  font-style: medium;
+  font-weight: normal;
+  font-size: 17px;
 }
 
 .ver-chefs {
@@ -78,7 +124,6 @@ font-size: 19px;
 
 .card-chef {
    height: 420px;
-   width: 200px;
    border-radius: 15px;
 }
 
@@ -88,7 +133,7 @@ height: 40px;
     border-radius: 50%;
 }
 .card img{
-  height: 250px;
+  height: 280px;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -103,7 +148,7 @@ height: 40px;
 }
 
 .navbar-lewagon {
-  background-color: black;
+  background-color: white;
 }
 
 
@@ -134,7 +179,7 @@ height: 40px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -156,9 +201,7 @@ height: 40px;
   transition: 0.8ms;
 }
 
-.nav-item:hover{
-  background-color: black;
-}
+
 
 .boton-signup-navbar:hover {
   background-color: rgb(170, 170, 170);
@@ -175,9 +218,9 @@ height: 40px;
 .search-box {
   position: absolute;
   top: 50%;
-  left: 50%;
+  right: 100%;
   transform: translate(-50%, -50%);
-  background: white;
+  background: black;
   height: 40px;
   border-radius: 40px;
   padding: 10px;
@@ -187,14 +230,12 @@ height: 40px;
 }
 .search-btn {
   color: white;
-  float: right;
-  width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: black;
-  display: flex;
-  justify-content: center;
   transition: 0.4s;
+  position: absolute;
+  top: 6px;
+  right: 15px;
 }
 
 .search-txt {
@@ -203,26 +244,13 @@ height: 40px;
   outline: none;
   float: left;
   padding: 0%;
-  color: black;
+  color: white;
   font-size: 14px;
   transition: 0.4s;
   width: 240px;
   margin-left: 5px;
-
 }
 
-.search-box:hover > .search-txt{
-  width: 240px;
-  padding: 0 6px;
-}
-
-.search-box:hover > .search-btn{
-  background: black;
-}
-
-.form-control {
-
-}
 
 #navbar-dashboard {
 
@@ -280,7 +308,7 @@ height: 40px;
 
 
 .how-it-works {
-  margin-top: 80px;
+  margin-top: 100px;
   margin-left: 60px;
   margin-right: 60px;
 
@@ -288,7 +316,10 @@ height: 40px;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 27px;
+      span {
+      color: #7AD7A7;
+      }
   }
 
   p {
@@ -308,7 +339,7 @@ height: 40px;
   text-align: center;
 
   img {
-    height: 165px;
+    height: 190px;
     margin-bottom: 5px;
   }
 
@@ -318,7 +349,7 @@ height: 40px;
     font-weight: 800;
     font-size: 19px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 30px;
   }
 
   p {
@@ -336,4 +367,100 @@ transform: scale(1.1);
 }
 .res-container a:hover {
   text-decoration: none;
+.chef-platform {
+  width: 100%;
+  height: 534px;
+  background-color: rgb(243, 243, 243);
+  margin-top: 130px;
+  padding-top: 50px;
+}
+
+.chef-customer-platform {
+  margin-top: 10px;
+
+  h3 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    text-align: center;
+
+
+    span {
+      color: #7AD7A7;
+    }
+  }
+
+  p {
+    color: rgb(68, 68, 68);
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 17px;
+    text-align: center;
+    width: 53%;
+    margin: 15px auto 43px;
+  }
+}
+
+.chefs-img {
+  display: flex;
+  justify-content: center;
+  transform: scale(80%);
+}
+
+.dish-of-the-day {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: rgb(230, 229, 229);
+  align-items: center;
+
+}
+
+.dish-container {
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  video {
+    height: 300px;
+    border-radius: 15px;
+  }
+}
+
+.dish-info {
+  h3 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 38px;
+  }
+  span {
+    color: #7AD7A7;
+  }
+  h4 {
+    color: rgb(44, 44, 44);
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 26px;
+  }
+  p {
+    color: rgb(56, 56, 56);
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 19px;
+  }
+}
+
+.btn-dark {
+  font-family: 'GT Walsheim Pro';
+  font-style: medium;
+  font-weight: 700;
+  font-size: 17px;
 }
