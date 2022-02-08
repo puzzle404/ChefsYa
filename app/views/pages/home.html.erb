@@ -10,7 +10,7 @@
 <div class="chefs-container">
 
   <div class="chefs">
-    <h1> Chefs de primer nivel cocinan para vos</h1>
+    <h1> Chefs de primer nivel <span>cocinan para vos</span></h1>
     <p>Los mejores chefs cocinan sus mejores platos todas las semanas</p>
     <div class="ver-chefs mt-5">
        <%= link_to "Ver todos los chefs ->", chefs_path, class:"text-dark ver-chefs" %>
@@ -40,26 +40,55 @@
 </div>
 
 <div class="how-it-works">
-  <h3>¿Cómo funciona?</h3>
-  <p>Contratá al mejor chef de tu zona para una ocasión especial.</p>
+  <h3>¿Cómo <span>funciona?</span></h3>
+  <p>Contrata al mejor chef de tu zona para una ocasion especial.</p>
 
   <div class="steps mt-6">
     <div class="step">
       <img src="https://cdn.dribbble.com/users/1078019/screenshots/3246453/media/f381f1434c1ec48c0caaa949bc50de1e.gif" alt="chef-pic">
-      <h4>Elegí el chef que más te guste</h4>
-      <p>Explorá nuestra oferta de chefs</p>
+      <h4>Elegí el chef que mas te guste</h4>
+      <p>Explora nuestra oferta de chefs</p>
     </div>
 
     <div class="step">
       <img src="https://cdn.dribbble.com/users/954572/screenshots/4384496/media/0059a5919deb21064512d12f44a736e3.gif" alt="chef-pic">
-      <h4>Armá el menú a tu gusto</h4>
+      <h4>Arma el menú a tu gusto</h4>
       <p>Elegí los platos que mas te gusten</p>
     </div>
 
     <div class="step">
       <img src="https://landings-web-assets.cookunity.com/assets/images/home/hiw2.gif" alt="chef-pic">
       <h4>Viví una experiencia única</h4>
-      <p>Disfrutá la comida desde tu hogar</p>
+      <p>Disfruta la comida desde tu hogar</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="chef-platform">
+  <div class="chef-customer-platform">
+    <h3>The first <span>Chef-to-Customer</span> Platform.</h3>
+    <p>Celebrating the diversity and creativity of the local culinary scene, we partner with culinary innovators and Michelin-starred chefs from across the city to bring you an at-home dining experience you can’t find anywhere else.</p>
+    <div class="chefs-img">
+      <img src="https://landings-web-assets.cookunity.com/assets/images/home/chefNew.png" alt="chefs-img">
+    </div>
+  </div>
+</div>
+
+
+<div class="dish-of-the-day">
+  <div class="dish-container">
+    <div class="dish-info">
+      <h3>Plato <span>del día</span></h3>
+      <h4>Tartar de Salmon Flambu</h4>
+      <p>por Marco Andujar</p>
+      <%= link_to "Descubrilo -->", root_path, class: "btn btn-dark" %>
+    </div>
+    <div class="dish-video">
+      <video loop playsinline autoplay muted>
+        <source src="https://res.cloudinary.com/dl0clawop/video/upload/v1644342363/cooking_wf8peq.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </div>
