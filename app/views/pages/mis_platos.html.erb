@@ -1,0 +1,53 @@
+
+ <div class="container-chefs">
+ <div class="row">
+   <!-- Agregar items al Navbar lateral o Sidebar -->
+    <div class="col-2" id="navbar-dashboard">
+      <div class="mt-3 mb-3 ml-3"><h4>Dashboard</h4></div>
+      <div class="ml-3"> Usuario: <%= current_user.email %> </div>
+      <div class="border-bottom mt-3"></div>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+           <%= link_to "Mis reservas", reservations_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Mis Platos", mis_platos_path(current_user.id), class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Crear Plato", new_dish_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Reviews", '#', class:"nav-link" %>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div class="col-10">
+      <div class="container justify-content-center">
+        <% @dishes.each do |dish| %>
+        <div class="cards card mt-5 mx-auto  " style="max-width: 620px;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <%= cl_image_tag dish.photos.first.key, style:"height:100%" %>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="card-title"><b><%= dish.title  %></b></h4>
+                      <p><b><i><%= dish.chef.first_name.capitalize  %></i></b></p>
+                      <p class="card-text"><%= dish.description %></p>
+                      <p class="card-text">$<%= dish.price  %></p>
+                      <div class="d-flex justify-content-between mr-3 mb-2">
+                        <p class="card-text"><i><small>Categoría: </small><small class="text-muted"><%= dish.category %></small></i></p>
+                        <%= link_to "Editar plato", edit_dish_path(dish), class: "btn btn-dark"  %>
+                      </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

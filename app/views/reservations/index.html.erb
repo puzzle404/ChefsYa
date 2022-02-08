@@ -1,7 +1,5 @@
-<div class="container mt-5 ">
-  <h1 class= "text-center"> Reservaciones</h1>
-</div>
 
+<% if current_user.chef == false %>
 <div class="container justify-content-center" style="width:550px">
   <% @reservations.each do |reservation|  %>
     <%= link_to reservation_path(reservation) do %>
@@ -18,4 +16,54 @@
       </div>
       <% end %>
   <% end %>
+</div>´
+<% else %>
+
+<div class="container-chefs">
+ <div class="row">
+   <!-- Agregar items al Navbar lateral o Sidebar -->
+    <div class="col-2" id="navbar-dashboard">
+      <div class="mt-3 mb-3 ml-3"><h4>Dashboard</h4></div>
+      <div class="ml-3"> Usuario: <%= current_user.email %> </div>
+      <div class="border-bottom mt-3"></div>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+           <%= link_to "Mis reservas", reservations_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Mis Platos", mis_platos_path(current_user.id), class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Crear Plato", new_dish_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Reviews", '#', class:"nav-link" %>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div class="col-10">
+      <h1 class= "text-center "> Reservaciones</h1>
+     <div class="container justify-content-center" style="width:550px">
+      <% @reservations.each do |reservation|  %>
+        <%= link_to reservation_path(reservation) do %>
+          <div class="cards card mt-4 mr-3 col-6" style="max-width: 550px;">
+            <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h4 class="card-title"><b><%= reservation.reservation_date  %> </b></h4>
+                    <p class="card-text">$<%= reservation.observations%></p>
+                    <p class="card-text">$<%= reservation.user_id %></p>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+<% end %>

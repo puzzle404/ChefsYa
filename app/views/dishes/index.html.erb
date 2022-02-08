@@ -60,13 +60,15 @@
 </div>
 <h1 class="mt-3 mb-3">Elegí tu plato</h1>
 <h6 class="mb-4">Podés seleccionar una opción por categoría</h6>
+
 <div class="container border-top">
   <div class=" border row justify-content-center ">
    <% @dishes.each do |dish| %>
   <div class="cards card mt-4 mr-3 col-6 " style="max-width: 620px;">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img src="https://www.holidify.com/images/cmsuploads/compressed/shoyu-ramen_20181227133143.jpg" style="height:100%" alt="dish photo">
+            <%= cl_image_tag dish.photos.first.key, style:"height:100%" %>
+
             </div>
             <div class="col-md-8">
               <div class="card-body">
