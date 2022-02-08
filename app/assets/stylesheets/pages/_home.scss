@@ -74,7 +74,6 @@ font-size: 19px;
 }
 
 .card-chef {
-
    height: 420px;
    width: 200px;
    border-radius: 15px;
@@ -84,7 +83,7 @@ font-size: 19px;
   height: 250px;
   object-fit: cover;
   border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
 
 }
 
@@ -195,8 +194,6 @@ font-size: 19px;
 
 }
 
-
-
 .search-box:hover > .search-txt{
   width: 240px;
   padding: 0 6px;
@@ -206,12 +203,26 @@ font-size: 19px;
   background: black;
 }
 
+.form-control {
+
+}
+
 #navbar-dashboard {
-  background-color: #373434;
+  background-color: black;
   padding-right: 0px;
   color: white;
 	position: sticky;
 	top: 0%;
+  border-top: solid 1px white;
+}
+
+
+.nav-link {
+  margin-left: 5px;
+  font-family: 'GT Walsheim Pro';
+  font-style: medium;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 #dashboard-card-container {
@@ -245,4 +256,55 @@ font-size: 19px;
   opacity: 1;
   transform: scale(1.01);
   text-decoration: none;
+}
+
+
+.how-it-works {
+  margin-top: 80px;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  h3 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+  }
+
+  p {
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 18px;
+  }
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+}
+
+.step {
+  text-align: center;
+
+  img {
+    height: 165px;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 19px;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  p {
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 16px;
+  }
 }
