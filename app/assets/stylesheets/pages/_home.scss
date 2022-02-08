@@ -127,6 +127,11 @@ font-size: 28px;
    border-radius: 15px;
 }
 
+#avatar-res {
+height: 40px;
+ width: 40px;
+    border-radius: 50%;
+}
 .card img{
   height: 280px;
   object-fit: cover;
@@ -134,6 +139,7 @@ font-size: 28px;
   border-bottom-left-radius: 15px;
 
 }
+
 
 .card2 img{
   border-top-left-radius: 15px;
@@ -219,7 +225,9 @@ font-size: 28px;
   border-radius: 40px;
   padding: 10px;
 }
-
+.form-nav {
+  margin-right: 167px;
+}
 .search-btn {
   color: white;
   height: 30px;
@@ -298,7 +306,14 @@ font-size: 28px;
   text-decoration: none;
 }
 
+#resevation-card1:hover {
 
+text-decoration: none;
+transform: scale(1.1);
+}
+.res-container a:hover {
+  text-decoration: none;
+}
 .how-it-works {
   margin-top: 100px;
   margin-left: 60px;

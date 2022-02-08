@@ -29,11 +29,11 @@
       </div>
     </div>
 
-
-    <div class="card-deck mt-5 mb-5">
-      <% @chefs.each do |chef| %>
-        <div class="card card2 card-chef">
-        <% if chef.photo.key == nil %>
+<%# Body de 3 chefs mas recientes %>
+  <div class="card-deck mt-5 mb-5">
+    <% @chefs.each do |chef| %>
+      <div class="card card2 card-chef">
+      <% if chef.photo.key == nil %>
 
         <% else %>
         <%= cl_image_tag  chef.photo.key, class:"card-img-top" %>
@@ -75,7 +75,11 @@
       </div>
     </div>
   </div>
-
+</div>
+<%# Como funciona CHefsYa %>
+<div class="how-it-works">
+  <h3>¿Cómo funciona?</h3>
+  <p>Contratá al mejor chef de tu zona para una ocasión especial.</p>
 
   <div class="chef-platform">
     <div class="chef-customer-platform">
