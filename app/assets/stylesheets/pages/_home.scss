@@ -50,15 +50,18 @@
 font-family: 'Gilroy';
 font-style: normal;
 font-weight: 800;
-font-size: 26px;
+font-size: 28px;
+  span {
+    color: #7AD7A7;
+  }
 }
 
 
 .chefs p {
-font-family: 'Gilroy';
-font-style: normal;
-font-weight: 500;
-font-size: 19px;
+  font-family: 'GT Walsheim Pro';
+  font-style: medium;
+  font-weight: normal;
+  font-size: 17px;
 }
 
 .ver-chefs {
@@ -75,12 +78,11 @@ font-size: 19px;
 
 .card-chef {
    height: 420px;
-   width: 200px;
    border-radius: 15px;
 }
 
 .card img{
-  height: 250px;
+  height: 280px;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -268,7 +270,10 @@ font-size: 19px;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 27px;
+      span {
+      color: #7AD7A7;
+      }
   }
 
   p {
@@ -298,7 +303,7 @@ font-size: 19px;
     font-weight: 800;
     font-size: 19px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 30px;
   }
 
   p {
@@ -307,4 +312,101 @@ font-size: 19px;
     font-weight: normal;
     font-size: 16px;
   }
+}
+
+.chef-platform {
+  width: 100%;
+  height: 485px;
+  background-color: rgb(243, 243, 243);
+  margin-top: 80px;
+  padding-top: 50px;
+}
+
+.chef-customer-platform {
+  margin-top: 10px;
+
+  h3 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    text-align: center;
+
+
+    span {
+      color: #7AD7A7;
+    }
+  }
+
+  p {
+    color: rgb(68, 68, 68);
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 17px;
+    text-align: center;
+    width: 53%;
+    margin: 15px auto 43px;
+  }
+}
+
+.chefs-img {
+  display: flex;
+  justify-content: center;
+}
+
+.dish-of-the-day {
+  display: flex;
+  width: 100%;
+  height: 485px;
+  background-color: rgb(230, 229, 229);
+  align-items: center;
+
+}
+
+.dish-container {
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  video {
+    height: 300px;
+    border-radius: 15px;
+  }
+}
+
+.dish-info {
+  h3 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 38px;
+  }
+  span {
+    color: #7AD7A7;
+  }
+  h4 {
+    color: rgb(44, 44, 44);
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 26px;
+  }
+  p {
+    color: rgb(56, 56, 56);
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 19px;
+  }
+}
+
+.btn-dark {
+  font-family: 'GT Walsheim Pro';
+  font-style: medium;
+  font-weight: 700;
+  font-size: 17px;
 }
