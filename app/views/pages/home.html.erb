@@ -1,14 +1,13 @@
+<%# BANNER HOME  %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
-
   <div class="value-proposition">
     <h1> Los mejores chefs de tu zona, </h1>
     <h1> cocinando en tu casa </h1>
     <p>Viví una experiencia única desde el comfort de tu hogar</p>
   </div>
 </div>
-
+<%# TEXTO MAS LINK "VER TODOS LOS CHEFS"  %>
 <div class="chefs-container">
-
   <div class="chefs">
     <h1> Chefs de primer nivel cocinan para vos</h1>
     <p>Los mejores chefs cocinan sus mejores platos todas las semanas</p>
@@ -17,7 +16,7 @@
     </div>
   </div>
 
-
+<%# Body de 3 chefs mas recientes %>
   <div class="card-deck mt-5 mb-5">
     <% @chefs.each do |chef| %>
       <div class="card card2 card-chef">
@@ -38,7 +37,7 @@
     <% end %>
   </div>
 </div>
-
+<%# Como funciona CHefsYa %>
 <div class="how-it-works">
   <h3>¿Cómo funciona?</h3>
   <p>Contratá al mejor chef de tu zona para una ocasión especial.</p>

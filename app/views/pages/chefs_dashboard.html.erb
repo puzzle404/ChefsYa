@@ -30,7 +30,7 @@
       <div class="container mt-1 mb-5" id="dashboard-card-container">
         <%= link_to "Mis Reservas", reservations_path, class:"card", id:"my-reservations-card" %>
 
-        <%= link_to "Mis Platos", "#", class:"card", id:"my-reservations-card" %>
+        <%= link_to "Mis Platos", mis_platos_path(current_user.id), class:"card", id:"my-reservations-card" %>
 
         <%= link_to "Crear Plato", new_dish_path , class:"card", id:"my-reservations-card" %>
 

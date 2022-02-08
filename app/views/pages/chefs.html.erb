@@ -17,22 +17,21 @@
      <% end %>
   </div>
 </div>
-
+<%# // Filtros %>
 <div class="container m-5">
   <h4> <strong>Filtrar por: </strong></h3>
 </div>
-
+<%# # Body de chefs %>
 <div class="border-bottom m-5"></div>
-
 <div class="container-chefs">
   <div class="row">
     <div class="col-8">
       <div class="container-card-chef ml-5">
       <% @chefs.each do |chef| %>
         <%= link_to chef_dishes_path(chef.id) do %>
+        <%# #Card de chef %>
         <div class="card1-chef">
         <% if chef.photo.key == nil %>
-
         <% else %>
           <%= cl_image_tag chef.photo.key  %>
         <% end %>
@@ -51,10 +50,10 @@
       <% end %>
       </div>
     </div>
+    <%# Mapa con ubicaciones del chefs %>
     <div class="col-4">
-          <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibGVua2FtY2YiLCJhIjoiY2t5NHdobThzMDN0azJvcnY5Z2t2YXF1YiJ9.ek9ZRNF1xIlF39FNXLFEQg'>
+      <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibGVua2FtY2YiLCJhIjoiY2t5NHdobThzMDN0azJvcnY5Z2t2YXF1YiJ9.ek9ZRNF1xIlF39FNXLFEQg'>
     </div>
   </div>
 </div>
-
 <div class="border-bottom mt-5 mb-5"></div>

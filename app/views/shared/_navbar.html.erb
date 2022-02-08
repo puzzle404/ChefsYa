@@ -11,20 +11,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-      <%= form_tag chefs_path, method: :get do %>
-        <div class="input-group">
+        <%= form_tag chefs_path, class: "d-flex form-nav justify-content-center", method: :get do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
-            placeholder: 'Prueba "Pescado al horno"'
+            class: "form-control rounded-pill pl-3 pr-2",
+            placeholder: "¿Qué quieres comer?"
           %>
-          <%= image_submit_tag("search.png", alt: "Create new entity", class: "search-btn") %>
-      <% end %>
+          <%= image_submit_tag("search.png", alt: "Create new entity", class: "search-btn mt-1 mr-4") %>
+        <% end %>
 
-       <div class="search-box">
+
+       <%# <div class="">
             <input class="search-txt" type="text" name= '' placeholder="¿Qué quieres que te cocinen?">
-            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-      </div>
+            <a class="search-btn" href="#"></a>
+      </div> %>
 
         <!-- Agregar opciones al navbar según el rol (usuario o chef) -->
          <li class="nav-item nav-sign-log">

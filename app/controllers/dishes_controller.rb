@@ -36,6 +36,12 @@ class DishesController < ApplicationController
     redirect_to dish_path(@dish)
   end
 
+  def destroy
+    @dish = Dish.find(params[:id])
+    @dish.delete
+    redirect_to mis_platos_path
+  end
+
   private
 
   def dish_params

@@ -3,16 +3,22 @@ class ReservationsController < ApplicationController
 
   def index
     if current_user.chef == false
+
       @reservations = Reservation.where(user_id: current_user.id)
     else
       # @reservations = Reservation.where(chef_id: current_user.id)
       @reservations = Reservation.where(chef_id: current_user.id)
+      @users = User.where(chef: false)
     end
   end
 
   def show
     @selected_dishes = @reservation.selected_dishes
+    # @chef = User.find(params[:chef_id])
     @dishes = Dish.all
+    @reservations = Reservation.where(chef_id: current_user.id)
+
+
   end
 
   def new
@@ -42,6 +48,7 @@ class ReservationsController < ApplicationController
   def edit
     @selected_dishes = @reservation.selected_dishes
     @dishes = Dish.all
+    raise
   end
 
   def update
