@@ -9,7 +9,11 @@
             <div class="card-body">
               <% @selected_dishes.each do |selected| %>
                 <% @dishes.each do |dish| %>
+                  <div>
+                  <%= dish.photo.key %>
                   <h4><%= dish.title if dish.id == selected.dish_id %></h4>
+
+                  </div>
                 <% end %>
               <% end %>
               <p class="card-title"><b>Cliente: <%= @reservation.user_id  %> </b></p>

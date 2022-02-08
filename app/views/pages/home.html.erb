@@ -19,7 +19,10 @@
 
 
   <div class="card-deck mt-5 mb-5">
+
     <% @chefs.each do |chef| %>
+      <% if chef.photo.key == nil %>
+      <% else %>
       <div class="card card-chef">
        <%= cl_image_tag  chef.photo.key, class:"card-img-top" %>
         <div class="card-body">
@@ -30,6 +33,7 @@
         </div>
       </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>

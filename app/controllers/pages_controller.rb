@@ -23,5 +23,7 @@ class PagesController < ApplicationController
 
   def chefs_dashboard
     @chefs = User.where(chef: true)
+    @dishes = Dish.where(chef_id: @chef)
+
   end
 end
