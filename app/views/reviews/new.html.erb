@@ -1,0 +1,5 @@
+<%= simple_form_for (@review), url: reviews_path do |f| %>
+    <%= f.input :comment, placeholder: 'Haz tu comentario' %>
+    <%= f.input :rating, placeholder: 'Valora al chef (1..5)' %>
+    <%= f.submit "Submit", class: "btn btn-primary"%>
+  <% end %>

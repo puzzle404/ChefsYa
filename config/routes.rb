@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     resources :selected_dishes, only: :create
   end
   get "chefs/:chef_id/dishes", to: "dishes#index", as: :chef_dishes
-  get "/chefs", to:"pages#chefs", as: :chefs
+  get "/chefs", to: "pages#chefs", as: :chefs
+
+  # Rutas para las reviews
+  get "chefs/:chef_id/reviews/new", to: "reviews#new", as: :reviews_new
+  get "chefs/:chef_id/reviews/", to: "reviews#index", as: :reviews
+  post "chefs/:chef_id/reviews/", to: "reviews#create", as: :reviews_create
 
   # Path que llegar al Dashboard de los chefs
   get "pages/chefs_dashboard", to: "pages#chefs_dashboard", as: :chefs_dashboard
