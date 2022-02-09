@@ -30,6 +30,7 @@
   max-width: 90%;
   position: relative;
   z-index: 1;
+  bottom: 30px;
 
   h1 {
   color: white;
@@ -82,6 +83,63 @@
 }
 
 
+.search-chef {
+  margin: 0 auto;
+  width: 750px;
+  height: 80px;
+  background-color: white;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 15px;
+}
+
+.comensales {
+  text-align: left;
+  h5 {
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 6px;
+  }
+  span {
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(105, 105, 105);
+  }
+}
+
+.donde {
+  text-align: left;
+  border-right: solid 1px rgb(190, 190, 190);
+  width: 200px;
+  h5 {
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 6px;
+  }
+  span {
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(105, 105, 105);
+  }
+}
+
+
+.search-icon {
+  color: black;
+}
 
 .chefs-container {
   margin-left: 60px;
@@ -165,13 +223,13 @@ height: 40px;
     display:inline-block;
     padding: auto 10px;
     display: block;
-    width: 115px;
+    width: 140px;
     height: 40px;
-    background: white;
+    background: black;
     padding-top: 8px;
     text-align: center;
     border-radius: 25px;
-    color: black;
+    color: white;
     font-weight: bold;
     line-height: 25px;
     font-size: 0.9rem;
@@ -220,21 +278,22 @@ height: 40px;
   top: 50%;
   right: 100%;
   transform: translate(-50%, -50%);
-  background: black;
+  background: white;
   height: 40px;
   border-radius: 40px;
   padding: 10px;
+  border: solid 1px black;
 }
 .form-nav {
   margin-right: 167px;
 }
 .search-btn {
   color: white;
-  height: 30px;
+  height: 25px;
   border-radius: 50%;
   transition: 0.4s;
   position: absolute;
-  top: 6px;
+  top: 7px;
   right: 15px;
 }
 
