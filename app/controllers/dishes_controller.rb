@@ -16,7 +16,7 @@ class DishesController < ApplicationController
     if current_user.chef
       @dish.chef_id = current_user.id
       if @dish.save
-      redirect_to dish_path(@dish)
+      redirect_to mis_platos_path
       else
       render :new
       end

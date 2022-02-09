@@ -15,7 +15,7 @@ class PagesController < ApplicationController
       end
     else
       @dishes = Dish.all
-      @chefs = User.all
+      @chefs = User.where(chef: true)
 
       @markers = @chefs.geocoded.map do |chef|
   {
@@ -32,13 +32,14 @@ class PagesController < ApplicationController
 
   def chefs_dashboard
     @chefs = User.where(chef: true)
+    @reviews = Review.where(chef_id: current_user.id)
   end
 
   def mis_platos
     @dishes = Dish.where(chef_id: current_user.id)
   end
 
-
-
-
+  def mis_reviews
+    @reviews = Review.where(chef_id: current_user.id)
+  end
 end
