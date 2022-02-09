@@ -88,9 +88,9 @@
 
 <%# Esta la primera parte del formulario de reserva  %>
 
-<div class="container  mt-3 mb-3"><button type="button" class="btn btn-dark container p-4 ">Resumen reserva</button>
-</div>
-<div class="container m-4">
+<%# <div class="container  mt-3 mb-3"><button type="button" class="btn btn-dark container p-4 ">Resumen reserva</button>
+</div> %>
+<div class="container">
   <h1>Nueva Reserva</h1>
 </div>
 
@@ -99,26 +99,38 @@
     <%= f.input :selected_dishes_id, as: :check_boxes, collection: @dishes, include_hidden: false %>
     <%= f.input :chef_id, as: :hidden, input_html: { value: @chef.id } %>
     <%# <%= f.association :dishes, colletction: Dish.all  %>
-    <%= f.submit "Reservar", class: "btn btn-primary"%>
+    <%= f.submit "Reservar", class: "btn btn-dark", style:"width:100%;"%>
   <% end %>
 </div>
 
-<% @reviews.each do |review|  %>
-  <div class="card" style="width:400px">
-    <div class="card-header">
-      <%= review.user.first_name.capitalize %>
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p><%= review.comment %></p>
-        <footer class="blockquote-footer">Valoración de: <cite title="Source Title"><%= review.rating %></cite></footer>
-      </blockquote>
+
+<div class="container " >
+<h2 class="mt-4">Agrega tu review</h2>
+  <div class="wrapper  ">
+    <div class="">
+      <% @reviews.each do |review|  %>
+      <div class="card" >
+        <div class="card-header">
+          <%= review.user.first_name.capitalize %>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p><%= review.comment %></p>
+            <footer class="blockquote-footer">Valoración de: <cite title="Source Title"><%= review.rating %></cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      <% end %>
+  </div>
+  <%# Form de review %>
+    <div class="">
+
+      <%= simple_form_for (@review) do |f| %>
+        <%= f.input :comment, placeholder: 'Haz tu comentario' %>
+        <%= f.input :rating, placeholder: 'Valora al chef (1..5)' %>
+        <%= f.submit "Submit", class: "btn btn-primary"%>
+      <% end %>
     </div>
   </div>
-<% end %>
-
-<%= simple_form_for (@review) do |f| %>
-    <%= f.input :comment, placeholder: 'Haz tu comentario' %>
-    <%= f.input :rating, placeholder: 'Valora al chef (1..5)' %>
-    <%= f.submit "Submit", class: "btn btn-primary"%>
-  <% end %>
+  <%# Show de reviews  %>
+</div>

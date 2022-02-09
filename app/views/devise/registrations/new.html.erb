@@ -12,6 +12,7 @@
 
   <div class="form-inputs mt-4">
 
+
     <%= f.collection_radio_buttons :chef, [[true, 'Soy un Chef'] ,[false, 'Soy un cliente']],:first, :last,
                 label: "Este es el placeholder",
                 input_html: { autocomplete: "", class: "m-5"}  %>
@@ -80,3 +81,47 @@
   var label = document.querySelector('.dish_category>label');
   label.classList.remove('select')
 </script> %>
+
+<script>
+// e = document.querySelector('input[name="user[chef]"]:checked').value;
+ const radioButtons = document.querySelectorAll('input[name="user[chef]"]');
+  const address_div = document.querySelector('.user_address');
+  const bio_div = document.querySelector('.user_bio');
+
+  window.onload = function() {
+    let status = document.querySelector('input[name="user[chef]"]:checked').value;
+// console.log(status)
+if (status === "true") {
+  // console.log('mostrar')
+  address_div.style.display = 'block';
+  bio_div.style.display = 'block';
+}
+else{
+  // console.log('ocultar')
+  address_div.style.display = 'none';
+  bio_div.style.display = 'none';
+}
+  //     address_div.style.display = 'none';
+  // bio_div.style.display = 'none';
+  }
+
+
+ radioButtons.forEach( radio_button => {
+   radio_button.addEventListener('change', ()=> {
+let status = document.querySelector('input[name="user[chef]"]:checked').value;
+// console.log(status)
+if (status === "true") {
+  // console.log('mostrar')
+  address_div.style.display = 'block';
+  bio_div.style.display = 'block';
+}
+else{
+  // console.log('ocultar')
+  address_div.style.display = 'none';
+  bio_div.style.display = 'none';
+}
+   })
+ })
+//  console.log(radio_buttons)s
+
+</script>
