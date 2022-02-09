@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.all
+    @reviews = Review.where(chef_id: params[:chef_id] )
   end
 
   def new
@@ -16,13 +16,14 @@ class ReviewsController < ApplicationController
     @review.chef_id = @chef.id
     @review.save
 
-    redirect_to reviews_path
+
+    redirect_to chef_dishes_path(@chef)
 
   end
 
   private
 
   def reviews_params
-    params.require(:review).permit(:comment, :rating, :chef_id)
+    params.require(:review).permit(:comment, :rating)
   end
 end
