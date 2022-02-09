@@ -14,8 +14,17 @@ class PagesController < ApplicationController
         @chefs = User.where(id: dish.chef_id)
       end
     else
-        @chefs = User.where(chef: true)
-        @dishes = Dish.all
+      @dishes = Dish.all
+      @chefs = User.all
+
+      @markers = @chefs.geocoded.map do |chef|
+  {
+    lat: chef.latitude,
+    lng: chef.longitude,
+    info_window: render_to_string(partial: "info_window", locals: { chef: chef })
+  }
+
+      end
     end
   end
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
@@ -28,4 +37,8 @@ class PagesController < ApplicationController
   def mis_platos
     @dishes = Dish.where(chef_id: current_user.id)
   end
+
+
+
+
 end
