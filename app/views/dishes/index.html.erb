@@ -59,27 +59,31 @@
 
   <div class="container border-top">
     <div class=" border row justify-content-center ">
-    <% @dishes.each do |dish| %>
+      <% @dishes.each do |dish| %>
 
-  <%# Esta es la card de cada plato  %>
+        <%# Esta es la card de cada plato  %>
 
-    <div class="cards card mt-4 mr-3 col-6 " style="max-width: 620px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <%= cl_image_tag dish.photos.first.key, style:"height:100%" %>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h4 class="card-title"><b><%= dish.title  %></b></h4>
-              <p><b><i><%= dish.chef.first_name.capitalize  %></i></b></p>
-              <p class="card-text"><%= dish.description %></p>
-              <p class="card-text">$<%= dish.price  %></p>
-              <p class="card-text"><i><small>Categoría: </small><small class="text-muted"><%= dish.category %></small></i></p>
+        <div class="cards card mt-4 mr-3 col-6 " style="max-width: 620px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+            <% if dish.photos.first == nil %>
+
+            <% else %>
+              <%= cl_image_tag dish.photos.first.key, style:"height:100%" %>
+            <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title"><b><%= dish.title  %></b></h4>
+                  <p><b><i><%= dish.chef.first_name.capitalize  %></i></b></p>
+                  <p class="card-text"><%= dish.description %></p>
+                  <p class="card-text">$<%= dish.price  %></p>
+                  <p class="card-text"><i><small>Categoría: </small><small class="text-muted"><%= dish.category %></small></i></p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -88,9 +92,11 @@
 
 <%# Esta la primera parte del formulario de reserva  %>
 
+
 <%# <div class="container  mt-3 mb-3"><button type="button" class="btn btn-dark container p-4 ">Resumen reserva</button>
 </div> %>
 <div class="container">
+
   <h1>Nueva Reserva</h1>
 </div>
 
@@ -102,6 +108,7 @@
     <%= f.submit "Reservar", class: "btn btn-dark", style:"width:100%;"%>
   <% end %>
 </div>
+
 
 
 <div class="container " >
@@ -133,4 +140,5 @@
     </div>
   </div>
   <%# Show de reviews  %>
+
 </div>

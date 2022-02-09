@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # Path que llegar al Dashboard de los chefs
   get "pages/chefs_dashboard", to: "pages#chefs_dashboard", as: :chefs_dashboard
   get "pages/chefs_dashboard/mis_platos", to: "pages#mis_platos", as: :mis_platos
-
+  get "pages/chefs_dashboard/mis_reviews", to: "pages#mis_reviews", as: :mis_reviews
 end
 
 # Rutas no utilizadas de momento:
