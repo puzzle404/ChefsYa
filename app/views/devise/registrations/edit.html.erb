@@ -23,12 +23,23 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <% if current_user.chef == true %>
+    <%= f.input :address,
+                required: true,
+                autofocus: true,
+                input_html: { class: "input is-info" },
+                label_html: { class: "label"} %>
+
     <%= f.input :bio,
                 required: true,
                 autofocus: true,
                 input_html: { class: "input is-info" },
                 label_html: { class: "label"} %>
     <%= f.input :photo, as: :file %>
+    <% else %>
+
+    <% end %>
+
   </div>
 
   <div class="form-actions">

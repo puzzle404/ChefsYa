@@ -4,28 +4,38 @@
  </div>
     <h1 class="text-center mt-4 align-items-center">Detalles reserva</h1>
     <%# CARD DE UNA RESERVA ESPECIFICA  %>
-      <div id="resevation-card1" class="cards card mt-4 mx-auto " style="max-width: 550px;">
-            <div class="card-body">
+      <div id="resevation-card1" class="cards bg-light card mt-4 mx-auto " style="max-width: 550px;">
+            <div class=" card-body ">
             <div class="d-flex justify-content-between">
-                <p class="card-title"><b>Cliente: <%= @reservation.user.first_name  %> </b></p>
+                <p class="card-title"><b>Cliente: <%= @reservation.user.first_name.capitalize  %> </b></p>
+                <p class="card-text font-weight-bold ">Fecha:<%= @reservation.reservation_date %></p>
                 <p class="card-title"><b>Nº de cliente: <%= @reservation.user_id  %> </b></p>
                  <%= cl_image_tag @reservation.user.photo.key, id: "avatar-res" %>
               </div>
             <% sum = 0 %>
               <% @reservations.each do |reservation| %>
                 <% reservation.selected_dishes.each do |selected_dish|%>
-                  <h5>- <i><%= selected_dish.dish.title  %></i></h5>
+                  <div class="d-flex ">
+                    <% if selected_dish.dish.photos.first == nil %>
 
+                    <% else %>
+                    <%= cl_image_tag selected_dish.dish.photos.first.key, style:"height:60px" %>
+                      <div class="ml-5 ">
+                        <h5> <i><%= selected_dish.dish.title  %></i></h5>
+                        <p class="blockquote-footer"><%= selected_dish.dish.category %></p>
+                      </div>
+                    <% end %>
+                  </div>
                   <% sum = sum + selected_dish.dish.price %>
                 <% end %>
               <% end %>
 
 
               <h3><i><em></em></i></h3>
-              <p class="card-text">Observaciones: <%= @reservation.observations %></p>
-              <div class="d-flex justify-content-between">
-                 <p class="card-text ">Fecha de la reserva:<%= @reservation.reservation_date %></p>
-                <h3>Total: $<%= sum %></h3>
+              <p class="card-text">Observaciones: <br><%= @reservation.observations %><br> </p>
+              <div class="d-flex ">
+
+                <h3 >Total: $<%= sum %></h3>
               </div>
 
 
