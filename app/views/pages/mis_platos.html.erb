@@ -28,10 +28,14 @@
     <div class="col-10">
       <div class="container justify-content-center">
         <% @dishes.each do |dish| %>
-        <div class="cards card mt-5 mx-auto  " style="max-width: 620px;">
+        <div class="cards card mt-5 mb-5 mx-auto  " style="max-width: 620px;">
           <div class="row no-gutters">
             <div class="col-md-4">
+            <% if dish.photos.first == nil %>
+
+            <% else %>
               <%= cl_image_tag dish.photos.first.key, style:"height:100%" %>
+            <% end %>
               </div>
               <div class="col-md-8">
                 <div class="card-body">

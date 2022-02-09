@@ -34,9 +34,27 @@
 
         <%= link_to "Crear Plato", new_dish_path , class:"card", id:"my-reservations-card" %>
 
-        <%= link_to "Crear Plato", new_dish_path , class:"card", id:"my-reservations-card" %>
+        <%= link_to "Mis reviews", mis_reviews_path , class:"card", id:"my-reservations-card" %>
 
-        <%= link_to "Crear Plato", new_dish_path , class:"card", id:"my-reservations-card" %>
+      </div>
+
+      <div class="container mt-5 mb-5">
+        <h2>Mis reviews: </h2>
+          <div class="container">
+            <% @reviews.each do |review|  %>
+              <div class="card" style="width:400px">
+                <div class="card-header">
+                  <%= review.user.first_name.capitalize %>
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p><%= review.comment %></p>
+                    <footer class="blockquote-footer">Valoración de: <cite title="Source Title"><%= review.rating %></cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>
