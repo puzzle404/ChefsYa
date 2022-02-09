@@ -98,6 +98,7 @@
 
 .comensales {
   text-align: left;
+  margin-top: 5px;
   h5 {
     font-family: 'GT Walsheim Pro';
     font-style: medium;
@@ -119,6 +120,8 @@
   text-align: left;
   border-right: solid 1px rgb(190, 190, 190);
   width: 200px;
+  margin-left: 20px;
+  margin-top: 5px;
   h5 {
     font-family: 'GT Walsheim Pro';
     font-style: medium;
@@ -137,8 +140,11 @@
 }
 
 
-.search-icon {
-  color: black;
+.search-icon i {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
 }
 
 .chefs-container {
