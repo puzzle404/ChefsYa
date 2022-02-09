@@ -306,7 +306,14 @@ height: 40px;
   text-decoration: none;
 }
 
+#resevation-card1:hover {
 
+text-decoration: none;
+transform: scale(1.1);
+}
+.res-container a:hover {
+  text-decoration: none;
+}
 .how-it-works {
   margin-top: 100px;
   margin-left: 60px;
@@ -360,13 +367,6 @@ height: 40px;
   }
 }
 
-#resevation-card1:hover {
-
-text-decoration: none;
-transform: scale(1.1);
-}
-.res-container a:hover {
-  text-decoration: none;
 .chef-platform {
   width: 100%;
   height: 534px;
