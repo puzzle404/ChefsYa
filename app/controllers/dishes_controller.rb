@@ -3,6 +3,8 @@ class DishesController < ApplicationController
     @chef = User.find(params[:chef_id])
     @dishes = Dish.where(chef_id: @chef)
     @categories = Dish.select(:category).distinct.where(chef_id: @chef)
+    @reviews = Review.where(chef_id: @chef)
+    @review = Review.new
   end
 
   def new
