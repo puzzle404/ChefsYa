@@ -231,7 +231,7 @@ height: 40px;
     display: block;
     width: 140px;
     height: 40px;
-    background: black;
+    background: #19BB73;
     padding-top: 8px;
     text-align: center;
     border-radius: 25px;
@@ -326,6 +326,7 @@ height: 40px;
   color: white;
   border-top: solid 1px white;
   height: 100vh;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 
 }
 
@@ -351,14 +352,13 @@ height: 40px;
   justify-content: center;
   height: 250px;
   margin-top: 20px;
-  width: 500px;
+  width: 650px;
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1598762888384-ef5fd4345ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80);
   background-size: cover;
   opacity: .8;
   transform: scale(0.9);
@@ -528,4 +528,15 @@ transform: scale(1.1);
   font-style: medium;
   font-weight: 700;
   font-size: 17px;
+}
+body {
+  font-family: 'GT Walsheim Pro';
+  h1, h2, h3, h4, h5 {
+    font-family: 'GT Walsheim Pro';
+  }
+}
+.btn {
+  border-radius: 25px;
+  background: #7AD7A7;
+  border-color: #7AD7A7;
 }

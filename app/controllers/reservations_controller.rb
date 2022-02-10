@@ -48,7 +48,7 @@ class ReservationsController < ApplicationController
   def edit
     @selected_dishes = @reservation.selected_dishes
     @dishes = Dish.all
-    raise
+
   end
 
   def update
