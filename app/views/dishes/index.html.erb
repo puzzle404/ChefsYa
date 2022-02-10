@@ -4,7 +4,7 @@
 <%@chef = User.find(params[:chef_id]) %>
 <div class="container mt-3">
   <div><h1><%= @chef.first_name.capitalize %> <%= @chef.last_name.capitalize %></h1>
-      <p><i>Rating</i> <%= @chef.rating %></p></div>
+      <p>Rating: <%= @average.round(1)%> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px", class: "mb-1"%>  </p> </div>
 
       <div class="row">
 
@@ -143,11 +143,19 @@
       <div class="col-6">
         <%= simple_form_for (@review) do |f| %>
           <%= f.input :comment, placeholder: 'Haz tu comentario' %>
-          <%= f.input :rating, placeholder: 'Valora al chef (1..5)' %>
+          <%= f.input :rating, collection: (1..5).to_a, placeholder: 'Valora al chef (1..5)' %>
           <%= f.submit "Submit", class: "btn btn-dark", style: "width:100%";%>
         <% end %>
       </div>
     </div>
 </div>
+
+<script>
+  var div =  document.querySelector('.review_rating');
+  div.classList.remove('select');
+
+  var label = document.querySelector('.review_rating>label');
+  label.classList.remove('select')
+</script>
 
   <%# Show de reviews  %>

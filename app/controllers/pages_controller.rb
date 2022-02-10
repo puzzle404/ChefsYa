@@ -9,23 +9,18 @@ class PagesController < ApplicationController
     if params[:query].present?
       sql_query = "title ILIKE :query OR description ILIKE :query"
       @dishes = Dish.where(sql_query, query: "%#{params[:query]}%")
-
-      @dishes.each do |dish|
-        @chefs = User.where(id: dish.chef_id)
+      if @dishes.nil?
+        @dishes = Dish.all
+        @chefs = User.where(chef: true)
+      else
+        @dishes.each do |dish|
+          @chefs = User.where(id: dish.chef_id)
+        end
       end
-
-
-       @markers = @chefs.geocoded.map do |chef|
-        {
-        lat: chef.latitude,
-        lng: chef.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { chef: chef })
-        }
-      end
-
     else
       @dishes = Dish.all
       @chefs = User.where(chef: true)
+    end
 
       @markers = @chefs.geocoded.map do |chef|
         {
@@ -34,7 +29,8 @@ class PagesController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { chef: chef })
         }
       end
-    end
+
+
   end
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
