@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   before_save :set_rating
+  before_save :set_phone
 
   # has_one :photo
   has_many :reviews
@@ -16,5 +17,9 @@ class User < ApplicationRecord
   scope :chef, -> { where(chef: true) }
   def set_rating
     self.rating = 0
+  end
+
+  def set_phone
+    self.phone_number = 0
   end
 end
