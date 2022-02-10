@@ -15,24 +15,24 @@
             </div>
         <% end %>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <div class="input-group">
-        <!-- Agregar opciones al navbar según el rol (usuario o chef) -->
-         <li class="nav-item nav-sign-log">
-          <div class="options-navbar mr-5">
-            <% if current_user.chef == false %>
-              <%= link_to "Home", root_path , class: "nav-link mr-3" %>
-            <% else %>
-              <%= link_to "Home", chefs_dashboard_path , class: "nav-link mr-3 boton-chef-login-navbar" %>
-            <% end %>
-            <%= link_to "Mis reservas", reservations_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
-            <% if current_user.chef == false %>
-            <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
-            <% end %>
-            <%= link_to "Contratar Chef", chefs_path, class: "boton-signup-navbar " %>
-          </div>
-        </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <div class="input-group">
+              <!-- Agregar opciones al navbar según el rol (usuario o chef) -->
+              <li class="nav-item nav-sign-log">
+                <div class="options-navbar mr-5">
+                  <% if current_user.chef == false %>
+                    <%= link_to "Home", root_path , class: "nav-link mr-3" %>
+                  <% else %>
+                    <%= link_to "Home", chefs_dashboard_path , class: "nav-link mr-3 boton-chef-login-navbar" %>
+                  <% end %>
+                  <%= link_to "Mis reservas", reservations_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
+                  <% if current_user.chef == false %>
+                  <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
+                  <% end %>
+                  <%= link_to "Contratar Chef", chefs_path, class: "boton-signup-navbar " %>
+                </div>
+              </li>
 
 
         <li class="nav-item dropdown">
@@ -53,8 +53,9 @@
         </li>
       <% else %>
 
-
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <div class="input-group">
         <li class="nav-item nav-sign-log">
           <div class="options-navbar mr-5">
             <%= link_to "Hazte Cocinero", new_user_registration_path, class: "nav-link mr-3 boton-chef-login-navbar" %>

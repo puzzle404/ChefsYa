@@ -544,7 +544,7 @@ body {
   border-color: #7AD7A7;
 }
 
-footer {
+#footer-home {
     padding: 65px 12px;
     background-color: #231f20;
     position: relative;
@@ -552,14 +552,14 @@ footer {
     display: block;
 }
 
-footer .row {
+#footer-home .row {
     max-width: 1230px;
     margin: 0 auto;
     padding: 0;
     flex-direction: row;
 }
 
-footer .flex-start {
+#footer-home .flex-start {
     width: 80%;
     float: left;
     display: flex;
@@ -567,27 +567,27 @@ footer .flex-start {
     margin-bottom: 0;
 }
 
-footer .flex-start .column-wrapper {
+#footer-home .flex-start .column-wrapper {
     display: flex;
 }
 
-footer .flex-start .column-wrapper .column-footer {
+#footer-home .flex-start .column-wrapper .column-footer {
     width: 25%;
     text-align: right;
 }
 
-footer .row .ul-footer {
+#footer-home .row .ul-footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-footer .row .ul-footer li {
+#footer-home .row .ul-footer li {
     margin-top: 15px;
     text-align: left;
 }
 
-footer .row .ul-footer li a {
+#footer-home .row .ul-footer li a {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -596,17 +596,17 @@ footer .row .ul-footer li a {
     cursor: pointer;
 }
 
-footer .flex-start .column-wrapper .column-footer {
+#footer-home .flex-start .column-wrapper .column-footer {
     width: 25%;
     text-align: right;
 }
 
-footer .flex-start .flex-row {
+#footer-home .flex-start .flex-row {
     display: flex;
     margin-top: 40px;
 }
 
-footer .flex-start .flex-row .footer-cu {
+#footer-home .flex-start .flex-row .footer-cu {
     display: inline;
     font-style: normal;
     font-weight: normal;
@@ -616,16 +616,16 @@ footer .flex-start .flex-row .footer-cu {
     margin: 0;
 }
 
-footer .flex-start .flex-row .row.with-flex {
+#footer-home .flex-start .flex-row .row.with-flex {
     display: flex;
 }
 
-footer .flex-start .flex-row .row {
+#footer-home .flex-start .flex-row .row {
     align-items: flex-start;
     padding: 0;
 }
 
-footer .flex-start .flex-row .row.with-flex p {
+#footer-home .flex-start .flex-row .row.with-flex p {
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -635,7 +635,7 @@ footer .flex-start .flex-row .row.with-flex p {
 }
 
 
-footer .flex-start {
+#footer-home .flex-start {
     width: 80%;
     float: left;
     display: flex;
@@ -643,14 +643,14 @@ footer .flex-start {
     margin-bottom: 0;
 }
 
-footer .flex-end {
+#footer-hometer .flex-end {
     text-align: right;
     display: flex;
     justify-content: flex-end;
     width: 20%;
 }
 
-footer .row .ul-footer {
+#footer-home .row .ul-footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
