@@ -5,6 +5,17 @@ class DishesController < ApplicationController
     @categories = Dish.select(:category).distinct.where(chef_id: @chef)
     @reviews = Review.where(chef_id: @chef)
     @review = Review.new
+
+    @rating_average = []
+    @average = 0.0
+
+    @reviews.each do |review|
+      @rating_average << review.rating
+    end
+
+    @average = @rating_average.sum / @rating_average.count
+    @chef.rating = @average.to_i
+    @chef.save
   end
 
   def new

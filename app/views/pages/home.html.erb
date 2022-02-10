@@ -57,8 +57,8 @@
         <%= cl_image_tag  chef.photo.key, class:"card-img-top" %>
           <% end %>
           <div class="card-body">
-          <h5 class="card-title text-center"> <%= chef.first_name %> <%= chef.last_name %></h5>
-          <p class="card-text text-center"><%= chef.rating %></p>
+          <h5 class="card-title text-center"> <%= chef.first_name %> <%= chef.last_name %> <%= chef.rating %> </h5>
+          <p class="card-text text-center"></p>
           <div class="boton-descubrilo text-center">
             <%= link_to "Descubrilo", chef_dishes_path(chef), class: "btn btn-dark" %>
           </div>
