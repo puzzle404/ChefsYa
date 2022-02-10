@@ -1,11 +1,11 @@
-<div class="container mt-4">
+<div class="container mt-5 border border-secondary p-4 rounded" style="width:650px">
   <%= simple_form_for (@dish) do |f| %>
     <%= f.input :title, placeholder: 'Nombre del plato' %>
     <%= f.input :description, placeholder: 'Descripcion' %>
     <%= f.input :price, placeholder: 'Price' %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.input :category, :collection => ["peruana" , "italiana", "mexicana", "asiatica", "thai", "china", "mediterranea" ], input_html: {class: 'test'} %>
-    <%= f.submit "Crear plato", class: "btn btn-primary"%>
+    <%= f.submit "Crear plato", class: "btn btn-success px-4", style:"width:100%;"%>
   <% end %>
 </div>
 

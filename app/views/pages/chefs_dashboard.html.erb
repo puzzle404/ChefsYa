@@ -3,61 +3,42 @@
 <div class="container-chefs">
   <div class="row">
   <!-- Agregar items al Navbar lateral o Sidebar -->
-    <div class="col-2" id="navbar-dashboard">
+    <div class="col-2 bg-light p-0 " id="navbar-dashboard ">
       <div class="mt-3 mb-3 ml-3"><h4>Dashboard</h4></div>
-      <div class="ml-3"> Usuario: <%= current_user.email %> </div>
-      <div class="border-bottom mt-3"></div>
-      <ul class="nav flex-column">
+      <div class="p-4  text-light bg-success rounded font-weight-bold"> <%= current_user.email %> </div>
+      <div class="border-bottom "></div>
+      <ul class="nav flex-column mt-2">
         <li class="nav-item">
-           <%= link_to "Mis reservas", reservations_path, class:"nav-link" %>
+           <%= link_to "Mis reservas", reservations_path, class:"nav-link text-dark mt-3" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Mis Platos", mis_platos_path(current_user.id), class:"nav-link" %>
+          <%= link_to "Mis Platos", mis_platos_path(current_user.id), class:"nav-link text-dark mt-3" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Crear Plato", new_dish_path, class:"nav-link" %>
+          <%= link_to "Crear Plato", new_dish_path, class:"nav-link text-dark mt-3" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Reviews", '#', class:"nav-link" %>
+          <%= link_to "Reviews", '#', class:"nav-link text-dark mt-3" %>
         </li>
       </ul>
     </div>
     <%# Container de las cards  %>
     <div class="col-10">
       <div class="container mt-3 ml-2">
-        <h2> <strong> ¡Bienvenido <%= current_user.first_name %>! </strong></h2>
+        <h2 class="text-center mt-4"> <strong> ¡Bienvenido <%= current_user.first_name %>! </strong></h2>
       </div>
       <div class="container mt-1 mb-5" id="dashboard-card-container">
-        <%= link_to "Mis Reservas", reservations_path, class:"card", id:"my-reservations-card" %>
+        <div class="row justify-content-around " style ="width:100%">
+          <%= link_to "Mis Reservas", reservations_path, class:"card", id:"my-reservations-card", style:"background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1598762888384-ef5fd4345ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80);" %>
+          <%= link_to "Mis Platos", mis_platos_path(current_user.id), class:"card", id:"my-reservations-card", style:"background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1560963689-b9e9773ff232?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1100&q=80);" %>
+        </div>
 
-        <%= link_to "Mis Platos", mis_platos_path(current_user.id), class:"card", id:"my-reservations-card" %>
-
-        <%= link_to "Crear Plato", new_dish_path , class:"card", id:"my-reservations-card" %>
-
-        <%= link_to "Mis reviews", mis_reviews_path , class:"card", id:"my-reservations-card" %>
-
-      </div>
-
-      <div class="container mt-5 mb-5">
-        <h2>Mis reviews: </h2>
-          <div class="container">
-            <% @reviews.each do |review|  %>
-              <div class="card" style="width:400px">
-                <div class="card-header">
-                  <%= review.user.first_name.capitalize %>
-                </div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p><%= review.comment %></p>
-                    <footer class="blockquote-footer">Valoración de: <cite title="Source Title"><%= review.rating %></cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-            <% end %>
-          </div>
+        <div class="row justify-content-around" style ="width:100%">
+          <%= link_to "Crear Plato", new_dish_path , class:"card", id:"my-reservations-card", style:"background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1564844536311-de546a28c87d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1071&q=80);" %>
+          <%= link_to "Mis reviews", mis_reviews_path , class:"card", id:"my-reservations-card", style:"background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1606214306048-a148c5942180?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGNoZWYlMjBkaXNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);" %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 <div class="border-bottom mb-5"></div>

@@ -14,7 +14,7 @@
           <%= text_field_tag :query,
             params[:query],
             class: "search-txt",
-            placeholder: 'Prueba "Pescado al horno"',
+            placeholder: '        Qué quieres comer?',
             size: '50' %>
           <%= image_submit_tag("search.png", alt: "Create new entity", class: "search-btn") %>
           </div>
@@ -37,14 +37,14 @@
             <% if current_user.chef == false %>
             <%= link_to "Hazte Cocinero", new_user_session_path, class: "nav-link mr-3 boton-chef-login-navbar" %>
             <% end %>
-            <%= link_to "Contratar Chef", chefs_path, class: "boton-signup-navbar" %>
+            <%= link_to "Contratar Chef", chefs_path, class: "boton-signup-navbar " %>
           </div>
         </li>
 
 
         <li class="nav-item dropdown">
         <% if current_user.photo.key == nil %>
-            <img src="https://images.unsplash.com/photo-1598762888384-ef5fd4345ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80" alt="no hay imagen" class = "avatar dropdown-toggle" id = "navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1259&q=80" alt="no hay imagen" class = "avatar dropdown-toggle" id = "navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to current_user.email, "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
