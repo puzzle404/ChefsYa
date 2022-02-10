@@ -13,17 +13,26 @@ class PagesController < ApplicationController
       @dishes.each do |dish|
         @chefs = User.where(id: dish.chef_id)
       end
+
+
+       @markers = @chefs.geocoded.map do |chef|
+        {
+        lat: chef.latitude,
+        lng: chef.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { chef: chef })
+        }
+      end
+
     else
       @dishes = Dish.all
       @chefs = User.where(chef: true)
 
       @markers = @chefs.geocoded.map do |chef|
-  {
-    lat: chef.latitude,
-    lng: chef.longitude,
-    info_window: render_to_string(partial: "info_window", locals: { chef: chef })
-  }
-
+        {
+        lat: chef.latitude,
+        lng: chef.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { chef: chef })
+        }
       end
     end
   end
