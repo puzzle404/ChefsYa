@@ -14,7 +14,10 @@
         <div class="cards card mt-4 mr-3 col-6" style="max-width: 550px;">
           <div class="row no-gutters">
             <div div class="col-md-4">
-              <img src="https://www.holidify.com/images/cmsuploads/compressed/shoyu-ramen_20181227133143.jpg" style="height:100%" alt="dish photo">
+            <% if dish.photos.first == nil %>
+            <% else %>
+              <%= cl_image_tag dish.photos.first.key, style:"height:100%" %>
+            <% end %>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
