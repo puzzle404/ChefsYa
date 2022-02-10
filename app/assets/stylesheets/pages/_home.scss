@@ -266,7 +266,9 @@ height: 40px;
   transition: 0.8ms;
 }
 
-
+.navbar-light .navbar-brand {
+    margin-left: 40px;
+}
 
 .boton-signup-navbar:hover {
   background-color: #7AD7A7;
@@ -321,7 +323,6 @@ height: 40px;
 
 
 #navbar-dashboard {
-
   position: sticky;
   top: 0;
   background-color: black;
@@ -330,7 +331,6 @@ height: 40px;
   border-top: solid 1px white;
   height: 100vh;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-
 }
 
 
@@ -374,8 +374,11 @@ height: 40px;
   text-decoration: none;
 }
 
-#resevation-card1:hover {
+#reservation-card1 {
+transition: .8s;
+}
 
+#reservation-card1:hover {
 text-decoration: none;
 transform: scale(1.1);
 }

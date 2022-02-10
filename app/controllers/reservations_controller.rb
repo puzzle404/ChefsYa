@@ -16,9 +16,7 @@ class ReservationsController < ApplicationController
     @selected_dishes = @reservation.selected_dishes
     # @chef = User.find(params[:chef_id])
     @dishes = Dish.all
-    @reservations = Reservation.where(chef_id: current_user.id)
-
-
+    @chef = User.find(@reservation.chef_id)
   end
 
   def new
