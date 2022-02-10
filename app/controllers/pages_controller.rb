@@ -30,7 +30,6 @@ class PagesController < ApplicationController
         }
       end
 
-
   end
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)
