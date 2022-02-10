@@ -14,7 +14,7 @@
           <%= text_field_tag :query,
             params[:query],
             class: "search-txt",
-            placeholder: '        Qué quieres comer?',
+            placeholder: '¿Qué quieres comer?',
             size: '50' %>
           <%= image_submit_tag("search.png", alt: "Create new entity", class: "search-btn") %>
           </div>
@@ -59,11 +59,6 @@
           </div>
         </li>
       <% else %>
-
-        <div class="search-box">
-            <input class="search-txt" type="text" name= '' placeholder="¿Qué quieres que te cocinen?">
-            <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
-          </div>
 
 
 
