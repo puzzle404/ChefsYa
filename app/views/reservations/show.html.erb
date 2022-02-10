@@ -4,17 +4,20 @@
  </div>
     <h1 class="text-center mt-4 align-items-center">Detalles reserva</h1>
     <%# CARD DE UNA RESERVA ESPECIFICA  %>
-      <div id="resevation-card1" class="cards bg-light card mt-4 mx-auto " style="max-width: 550px;">
+      <div id="reservation-card1" class="cards bg-light card mt-4 mx-auto " style="max-width: 550px;">
             <div class=" card-body ">
             <div class="d-flex justify-content-between">
+              <% if current_user.chef == true %>
                 <p class="card-title"><b>Cliente: <%= @reservation.user.first_name.capitalize  %> </b></p>
+              <% else %>
+                <p class="card-title"><b>Chef: <%= @chef.first_name.capitalize  %>  <%= @chef.last_name.capitalize  %></b></p>
+              <% end %>
                 <p class="card-text font-weight-bold ">Fecha:<%= @reservation.reservation_date %></p>
                 <p class="card-title"><b>Nº de cliente: <%= @reservation.user_id  %> </b></p>
                  <%= cl_image_tag @reservation.user.photo.key, id: "avatar-res" %>
               </div>
             <% sum = 0 %>
-              <% @reservations.each do |reservation| %>
-                <% reservation.selected_dishes.each do |selected_dish|%>
+                <% @reservation.selected_dishes.each do |selected_dish|%>
                   <div class="d-flex ">
                     <% if selected_dish.dish.photos.first == nil %>
 
@@ -29,8 +32,6 @@
                   </div>
 
                 <% end %>
-              <% end %>
-
 
               <h3><i><em></em></i></h3>
               <p class="card-text">Observaciones: <br><%= @reservation.observations %><br> </p>
