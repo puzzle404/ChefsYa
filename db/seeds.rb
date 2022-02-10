@@ -23,14 +23,14 @@ user1 = User.new(email: "user1@gmail.com", first_name: "Carlos", last_name: "Fer
 user1.photo.attach(io: file, filename: 'image1.png', content_type: 'image/png')
 user1.save!
 
-# User2
+# # User2
 file = URI.open('https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80')
 user2 = User.new(email: "user2@gmail.com", first_name: "Roberto", last_name: "Melaza",
   bio: "", address: "", phone_number: 26178854, chef: false, password: "123456")
 user2.photo.attach(io: file, filename: 'image2.png', content_type: 'image/png')
 user2.save!
 
-# User3
+# # User3
 file = URI.open('https://images.unsplash.com/photo-1542178243-bc20204b769f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80')
 user3 = User.new(email: "user3@gmail.com", first_name: "Nicolás", last_name: "Rodriguez",
   bio: "", address: "", phone_number: 2662555, chef: false, password: "123456")

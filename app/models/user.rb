@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  before_save :set_rating
+
   # has_one :photo
   has_many :reviews
   has_many :dishes
@@ -10,5 +12,9 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   validates :photo, presence: true
+
   scope :chef, -> { where(chef: true) }
+  def set_rating
+    self.rating = 0
+  end
 end
