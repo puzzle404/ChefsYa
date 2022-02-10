@@ -1,0 +1,75 @@
+.header {
+  height: 200px;
+  margin-top: 20px;
+  position: relative;
+  left: 25px;
+  border-bottom: solid 1px rgb(221, 221, 221);
+}
+
+.text {
+  h2 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+  }
+}
+
+.categorias-fotos {
+  margin-top: 40px;
+}
+
+.filtros {
+   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.chefs-map {
+  position: relative;
+  left: 25px;
+  height: 1500px;
+  margin-top: 35px;
+}
+
+.map {
+  float: right;
+  width: 42%;
+  position: relative;
+  bottom: 1500px;
+  img {
+    width: 100%;
+  }
+}
+
+.card-del-chef {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.card-body {
+  margin-left: 3px;
+  h5 {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 21px;
+    color: black;
+  }
+  p {
+    font-family: 'GT Walsheim Pro';
+    font-style: medium;
+    font-weight: normal;
+    font-size: 16px;
+    color: rgb(63, 63, 63);
+  }
+  small {
+    color: red;
+  }
+}
+
+.text-muted {
+  position: relative;
+  top: 50px;
+}
