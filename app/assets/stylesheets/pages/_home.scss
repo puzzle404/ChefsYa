@@ -266,7 +266,9 @@ height: 40px;
   transition: 0.8ms;
 }
 
-
+.navbar-light .navbar-brand {
+    margin-left: 40px;
+}
 
 .boton-signup-navbar:hover {
   background-color: #7AD7A7;
