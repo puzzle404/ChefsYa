@@ -45,8 +45,8 @@
                   <p class="card-text">$<%= dish.price  %></p>
                   <div class="d-flex justify-content-between mr-3 mb-2">
                     <p class="card-text"><i><small>Categoría: </small><small class="text-muted"><%= dish.category %></small></i></p>
-                    <%= link_to "Editar", edit_dish_path(dish), class: "btn btn-dark"  %>
-                    <%= link_to "Eliminar", dish_path(dish), :data => {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-dark" %>
+                    <%= link_to "Editar", edit_dish_path(dish), class: "btn btn-dark", style: "padding: 10px 25px;"  %>
+                    <%= link_to "Eliminar", dish_path(dish), :data => {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-dark", style: "padding: 10px 25px;" %>
                   </div>
               </div>
             </div>
