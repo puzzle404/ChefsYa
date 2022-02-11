@@ -17,7 +17,7 @@ SelectedDish.destroy_all
 Review.destroy_all
 p "creando seeds"
 #  User1
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80')
 user1 = User.new(email: "user1@gmail.com", first_name: "Carlos", last_name: "Ferrer",
   bio: "", address: "", phone_number: 261383119, chef: false, password: "123456")
 user1.photo.attach(io: file, filename: 'image1.png', content_type: 'image/png')
@@ -54,7 +54,7 @@ chef2.save!
 # Chef3
 file = URI.open('https://images.unsplash.com/photo-1601341348280-550b5e87281b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
 chef3 = User.new(email: "christine@gmail.com", first_name: "Ruben", last_name: "ferrer",
-  bio: "Con su enfoque en la agricultura orgánica, la cocina de la granja a la mesa y la carnicería, Brent finalmente se mudó a Portsmouth, New Hampshire, para ser el chef ejecutivo de The Green Monkey y el chef ejecutivo consultor para la apertura de dos restaurantes en Dover, New Hampshire." , address: "Av. Abancay 540, Lima, Peru", phone_number: 265444, chef: true, password: "123456")
+  bio: "Con su enfoque en la agricultura orgánica, la cocina de la granja a la mesa y la carnicería, Brent finalmente se mudó a Portsmouth, New Hampshire, para ser el chef ejecutivo de The Green Monkey y el chef ejecutivo consultor para la apertura de dos restaurantes en Dover, New Hampshire." , address: "Jose Ingenieros 139, Godoy Cruz, Mendoza, Argentina", phone_number: 265444, chef: true, password: "123456")
 chef3.photo.attach(io: file, filename: 'chef3.png', content_type: 'image/png')
 chef3.save!
 

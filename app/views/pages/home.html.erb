@@ -35,14 +35,7 @@
 </div>
 
 <div class="container">
-    <%= form_tag chefs_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Encuentra los mejores chefs de tu zona"
-    %>
-    <%= submit_tag "Empieza a disfrutar!!", class: "btn btn-secondary mt-1 btn-lg btn-block" %>
-    <% end %>
+
   </div>
 
 
@@ -55,30 +48,55 @@
       <h1> Chefs de primer nivel <span>cocinan para vos</span></h1>
       <p>Los mejores chefs cocinan sus mejores platos todas las semanas</p>
       <div class="ver-chefs mt-5">
-        <%= link_to "Ver todos los chefs ->", chefs_path, class:"text-dark ver-chefs" %>
+       <%= link_to "Ver todos los chefs ->", chefs_path, class:"ver-chefs btn btn-dark text-white p-2 px-3 ", style:"font-size: 25px" %>
       </div>
     </div>
 
 <%# Body de 3 chefs mas recientes %>
   <div class="card-deck mt-5 mb-5">
-    <% @chefs.each do |chef| %>
-      <div class="card card2 card-chef">
-      <% if chef.photo.key == nil %>
-
-        <% else %>
-        <%= cl_image_tag  chef.photo.key, class:"card-img-top" %>
-          <% end %>
-          <div class="card-body">
-          <h5 class="card-title text-center"> <%= chef.first_name %> <%= chef.last_name %> <%= chef.rating %> </h5>
-          <p class="card-text text-center"></p>
-          <div class="boton-descubrilo text-center">
-            <%= link_to "Descubrilo", chef_dishes_path(chef), class: "btn btn-dark" %>
-          </div>
-        </div>
-        </div>
-
+    <div class="card card2 card-chef">
+      <% if @chef1.photo.key == nil %>
+      <% else %>
+        <%= cl_image_tag  @chef1.photo.key, class:"card-img-top" %>
       <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <%= @chef1.first_name %> <%= @chef1.last_name %> <%= @average1 %> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
+            <p class="card-text text-center"></p>
+            <div class="boton-descubrilo text-center">
+              <%= link_to "Descubrilo", chef_dishes_path(@chef1), class: "btn btn-dark" %>
+            </div>
+          </div>
     </div>
+
+    <div class="card card2 card-chef">
+      <% if @chef2.photo.key == nil %>
+      <% else %>
+        <%= cl_image_tag  @chef2.photo.key, class:"card-img-top" %>
+      <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <%= @chef2.first_name %> <%= @chef2.last_name %> <%= @average2 %> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
+            <p class="card-text text-center"></p>
+            <div class="boton-descubrilo text-center">
+              <%= link_to "Descubrilo", chef_dishes_path(@chef2), class: "btn btn-dark" %>
+            </div>
+          </div>
+    </div>
+
+    <div class="card card2 card-chef">
+      <% if @chef3.photo.key == nil %>
+      <% else %>
+        <%= cl_image_tag  @chef3.photo.key, class:"card-img-top" %>
+      <% end %>
+          <div class="card-body">
+            <h5 class="card-title text-center"> <%= @chef3.first_name %> <%= @chef3.last_name %> <%= @average3%> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
+            <p class="card-text text-center"></p>
+            <div class="boton-descubrilo text-center">
+              <%= link_to "Descubrilo", chef_dishes_path(@chef3), class: "btn btn-dark" %>
+            </div>
+          </div>
+    </div>
+
+  </div>
   </div>
 
   <div class="how-it-works">

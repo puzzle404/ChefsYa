@@ -1,73 +1,72 @@
-<div class="sign-up-container ">
-  <div class="sign-up-banner">
-    <img src="https://images.rappi.com/cms-web/images/sign-in_3f701ac0c6.png" alt="banner">
+
+<div class="sign-up-container d-flex">
+  <div class="col-8 p-0">
+    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" style="height:100vh" alt="banner">
   </div>
 
-  <div class="sign-up-form mt-5">
-    <h2 class= "text-center"><strong>Crea tu cuenta</strong></h2>
+    <div class="sign-up-form mt-2 mb-5 ml-4 mr-5 pr-5 col-4" style="max-height:600px">
+      <h2 class= "text-center mt-4"><strong>Crea tu cuenta</strong></h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class=" mt-4">
 
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs mt-4">
-
-
-    <%= f.collection_radio_buttons :chef, [[true, 'Soy un Chef'] ,[false, 'Soy un cliente']],:first, :last,
-                label: "Este es el placeholder",
-                input_html: { autocomplete: "", class: "m-5"}  %>
+          <%= f.collection_radio_buttons :chef, [[true, 'Soy un Chef'] ,[false, 'Soy un cliente']],:first, :last,
+                      label: "Este es el placeholder",
+                      input_html: { autocomplete: "", class: "m-5 mb-4"}  %>
 
 
 
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "", class: "input is-info" },
-                label_html: { class: "label"} %>
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "", class: "input is-info" },
+                      label_html: { class: "label"} %>
 
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "", class: "input is-info" },
-                label_html: { class: "label"} %>
+          <%= f.input :last_name,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "", class: "input is-info" },
+                      label_html: { class: "label"} %>
 
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { class: "input is-info" },
-                label_html: { class: "label"} %>
-    <%= f.input :address,
-                required: true,
-                autofocus: true,
-                input_html: { class: "input is-info" },
-                label_html: { class: "label"} %>
-    <%= f.input :bio,
-                required: true,
-                autofocus: true,
-                input_html: { class: "input is-info" },
-                label_html: { class: "label"} %>
-    <%= f.input :photo, as: :file %>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { class: "input is-info" },
+                      label_html: { class: "label"} %>
+          <%= f.input :address,
+                      required: true,
+                      autofocus: true,
+                      input_html: { class: "input is-info" },
+                      label_html: { class: "label"} %>
+          <%= f.input :bio,
+                      required: true,
+                      autofocus: true,
+                      input_html: { class: "input is-info" },
+                      label_html: { class: "label"} %>
+          <%= f.input :photo, as: :file %>
 
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { class: "input is-info" },
-                label_html: { class: "label"} %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "", class: "input is-info" },
-                label_html: { class: "label"} %>
-  </div>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { class: "input is-info" },
+                      label_html: { class: "label"} %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "", class: "input is-info" },
+                      label_html: { class: "label"} %>
+        </div>
 
-  <div class="form-actions mb-3">
-    <%= f.button :submit, "Sign up", class: "button is-info is-rounded btn-signup " %>
+        <div class="form-actions mb-3">
+          <%= f.button :submit, "Sign up", class: "button is-info is-rounded btn-signup " %>
 
-  </div>
-<% end %>
+        </div>
+      <% end %>
 
 
-    <%= render "devise/shared/links" %>
-  </div>
+      <%= render "devise/shared/links" %>
+    </div>
 </div>
 <%# <script>
   var div =  document.querySelector('.dish_category');

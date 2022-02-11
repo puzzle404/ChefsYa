@@ -1,4 +1,5 @@
 
+
 <% if current_user.chef == false %>
 <%# CARDS DE LAS RESERVAS PARA UN CUSTOMER  %>
 
@@ -10,7 +11,7 @@
           <%= link_to reservation_path(reservation) do %>
             <div id= "reservation-card1"class="cards card mt-4 mr-3 col-6" style="max-width: 550px;">
                   <div  class="card-body  ">
-                    <div class=" d-flex justify-content-between border bg-light p-2 rounded mb-2" >
+                    <div class=" color-verde-card d-flex justify-content-between border p-2  mb-2" >
                       <h4 class="card-title"><b>Fecha: <%= reservation.reservation_date  %> </b></h4>
                       <p class="card-text">Nº de cliente: <%= reservation.user.id %></p>
                       <%= cl_image_tag reservation.user.photo.key, id: "avatar-res" %>
@@ -24,7 +25,7 @@
       </div>
     </div>
     <div class="col-6">
-      <%= image_tag 'https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', style:"width:100%; position:'sticky';" %>
+      <%= image_tag 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2019%2F07%2Ftardy-reservations-opentable-FT-BLOG0719.jpg', style:"width:100%; height:900px; position:'sticky';" %>
     </div>
   </div>
 <% else %>
@@ -47,21 +48,21 @@
               <%= link_to "Crear Plato", new_dish_path, class:"nav-link text-dark mt-3" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Reviews", '#', class:"nav-link text-dark mt-3" %>
+              <%= link_to "Reviews", mis_reviews_path, class:"nav-link text-dark mt-3" %>
             </li>
           </ul>
       </div>
 
       <%# CARDS DE LAS RESERVAS PARA CHEF  %>
 
-        <div class="col-10">
-          <h1 class= "text-center mt-4"> Reservaciones</h1>
+        <div class="col-10" style="background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0.1,0,0.1,0.1)), url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'); background-size:cover; background-repeat:no-repeat; background-position-y: bottom;">
+          <b><h1 class= "text-center mt-4 text-white font-weight-bold"> Reservaciones</h1></b>
           <div class="container justify-content-center res-container" style="width:550px">
             <% @reservations.each do |reservation|  %>
               <%= link_to reservation_path(reservation) do %>
                 <div id= "reservation-card1"class="cards card mt-4 mr-3 col-6" style="max-width: 550px;">
                       <div  class="card-body  ">
-                        <div class=" d-flex justify-content-between border bg-light p-2 rounded mb-2" >
+                        <div class="color-verde-card  d-flex justify-content-between border  p-2  mb-2" >
                           <h4 class="card-title"><b>Fecha: <%= reservation.reservation_date  %> </b></h4>
                           <p class="card-text">Nº de cliente: <%= reservation.user.id %></p>
                           <%= cl_image_tag reservation.user.photo.key, id: "avatar-res" %>
