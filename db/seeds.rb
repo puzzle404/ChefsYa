@@ -16,12 +16,16 @@ Reservation.destroy_all
 SelectedDish.destroy_all
 Review.destroy_all
 p "creando seeds"
+
+
+p "Creando Usuarios"
 #  User1
 file = URI.open('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80')
-user1 = User.new(email: "user1@gmail.com", first_name: "Carlos", last_name: "Ferrer",
+user1 = User.new(email: "cmanuferrer@gmail.com", first_name: "Manuel", last_name: "Ferrer",
   bio: "", address: "", phone_number: 261383119, chef: false, password: "123456")
 user1.photo.attach(io: file, filename: 'image1.png', content_type: 'image/png')
 user1.save!
+
 
 # # User2
 file = URI.open('https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80')
@@ -30,6 +34,7 @@ user2 = User.new(email: "user2@gmail.com", first_name: "Roberto", last_name: "Me
 user2.photo.attach(io: file, filename: 'image2.png', content_type: 'image/png')
 user2.save!
 
+
 # # User3
 file = URI.open('https://images.unsplash.com/photo-1542178243-bc20204b769f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80')
 user3 = User.new(email: "user3@gmail.com", first_name: "Nicolás", last_name: "Rodriguez",
@@ -37,6 +42,7 @@ user3 = User.new(email: "user3@gmail.com", first_name: "Nicolás", last_name: "R
 user3.photo.attach(io: file, filename: 'image3.png', content_type: 'image/png')
 user3.save!
 
+p "Creando Chefs"
 # Chef1
 file = URI.open('https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1087&q=80')
 chef1 = User.new(email: "maximiliano@gmail.com", first_name: "Maximiliano", last_name: "Brenner",
@@ -53,7 +59,7 @@ chef2.save!
 
 # Chef3
 file = URI.open('https://images.unsplash.com/photo-1601341348280-550b5e87281b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')
-chef3 = User.new(email: "christine@gmail.com", first_name: "Ruben", last_name: "ferrer",
+chef3 = User.new(email: "christine@gmail.com", first_name: "Christine", last_name: "Stewart",
   bio: "Con su enfoque en la agricultura orgánica, la cocina de la granja a la mesa y la carnicería, Brent finalmente se mudó a Portsmouth, New Hampshire, para ser el chef ejecutivo de The Green Monkey y el chef ejecutivo consultor para la apertura de dos restaurantes en Dover, New Hampshire." , address: "Jose Ingenieros 139, Godoy Cruz, Mendoza, Argentina", phone_number: 265444, chef: true, password: "123456")
 chef3.photo.attach(io: file, filename: 'chef3.png', content_type: 'image/png')
 chef3.save!
@@ -65,6 +71,7 @@ chef4 = User.new(email: "chris@gmail.com", first_name: "Chris", last_name: "Toy"
 chef4.photo.attach(io: file, filename: 'chef4.png', content_type: 'image/png')
 chef4.save!
 
+p "Creando Platos"
 # Dish1
 pollo = Dish.create!(title: "Pollo grillado", description: "El pollo asado, rostizado, en brasas o a la brasa es un plato genérico elaborado con un pollo expuesto directamente al fuego, que puede provenir de un hogar casero, hasta el asador profesional rotatorio.", price: 1500, category: "italiana", chef: chef1)
 
@@ -134,7 +141,31 @@ fish_images.each do |fish_info|
 end
 fish.save!
 
+p "Creando platos seleccionados"
+# chef1
+selected1 = SelectedDish.create(reservation_id: 1, dish_id: 1)
+selected2 = SelectedDish.create(reservation_id: 1, dish_id: 5)
+# chef 2
+selected3 = SelectedDish.create(reservation_id: 2, dish_id: 5)
+#  chef 3
+selected4 = SelectedDish.create(reservation_id: 3, dish_id: 2)
+#  chef 4
+selected5 = SelectedDish.create(reservation_id: 4, dish_id: 3)
 
+selected6 = SelectedDish.create(reservation_id: 5, dish_id: 4)
+
+selected7 = SelectedDish.create(reservation_id: 6, dish_id: 1)
+
+selected8 = SelectedDish.create(reservation_id: 7, dish_id: 3)
+selected9 = SelectedDish.create(reservation_id: 8, dish_id: 4)
+selected10 = SelectedDish.create(reservation_id: 9, dish_id: 4)
+selected11 = SelectedDish.create(reservation_id: 10, dish_id: 5)
+
+
+
+
+
+p "Creando reservaciones"
 reservation1 = Reservation.create!(user: user1, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Lunes por la tarde te llamo y coordinamos')
 reservation2 = Reservation.create!(user: user2, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Buenisimo, nos vemos el sábado')
 reservation3 = Reservation.create!(user: user2, chef_id: chef2.id, reservation_date: '07/02/2022', observations: 'Genial, el martes te llamo para coordinar')
@@ -146,6 +177,8 @@ reservation8 = Reservation.create!(user: user2, chef_id: chef4.id, reservation_d
 reservation9 = Reservation.create!(user: user3, chef_id: chef4.id, reservation_date: '07/02/2022', observations: 'Te esperamos en casa, saludos')
 reservation10 = Reservation.create!(user: user3, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Las bebidas pueden incluirse?, gracias')
 
+
+p "Creando Reviews"
 review1 = Review.create!(rating: 4, user: user1, chef_id: chef4.id, comment: "Excelente chef, y deliciosa comida")
 review2 = Review.create!(rating: 5, user: user2, chef_id: chef1.id, comment: "Todo de 10, muy recomendable")
 review3 = Review.create!(rating: 5, user: user2, chef_id: chef3.id, comment: "La comida exelente, y un 10 de persona")

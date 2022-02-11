@@ -1,36 +1,36 @@
-<div class="sign-up-container">
-  <div class="sign-up-banner">
-    <img src="https://images.rappi.com/cms-web/images/sign-in_3f701ac0c6.png" alt="banner">
+<div class="sign-up-container d-flex">
+  <div class="col-8 pl-0" style=" background-image:cover;">
+    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');">
   </div>
 
-  <div class="sign-up-form mt-5">
+  <div class="sign-up-form mt-5 col-4 mr-5 g-4">
     <h2 class= "text-center"><strong>Logueate</strong></h2>
 
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs mt-4">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "", class: "input is-info" },
-                label_html: { class: "label"} %>
+      <div class="mt-4">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "", class: "input is-info" },
+                    label_html: { class: "label"} %>
 
-    <%= f.input :password,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "", class: "input is-info" },
-                label_html: { class: "label"} %>
+        <%= f.input :password,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "", class: "input is-info" },
+                    label_html: { class: "label"} %>
 
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
 
-  <div class="form-actions mb-3">
-    <%= f.button :submit, "Sign in", class: "button is-info is-rounded btn-signup " %>
+      <div class="form-actions mb-3">
+        <%= f.button :submit, "Sign in", class: "button is-info is-rounded btn-signup " %>
 
-  </div>
-<% end %>
+      </div>
+    <% end %>
 
     <%= render "devise/shared/links" %>
 
