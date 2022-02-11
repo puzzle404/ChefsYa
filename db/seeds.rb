@@ -141,6 +141,24 @@ fish_images.each do |fish_info|
 end
 fish.save!
 
+
+
+
+
+
+
+p "Creando reservaciones"
+reservation1 = Reservation.create!(user: user1, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Lunes por la tarde te llamo y coordinamos')
+reservation2 = Reservation.create!(user: user2, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Buenisimo, nos vemos el sábado')
+reservation3 = Reservation.create!(user: user2, chef_id: chef2.id, reservation_date: '07/02/2022', observations: 'Genial, el martes te llamo para coordinar')
+reservation4 = Reservation.create!(user: user2, chef_id: chef3.id, reservation_date: '07/02/2022', observations: 'Estupendo, te comento que tengo un horno de restaurant, por si te sirve')
+reservation5 = Reservation.create!(user: user3, chef_id: chef4.id, reservation_date: '07/02/2022', observations: 'Si puedes llámame asi coordinamos')
+reservation6 = Reservation.create!(user: user3, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Te escribo el viernes')
+reservation7 = Reservation.create!(user: user1, chef_id: chef3.id, reservation_date: '07/02/2022', observations: 'Necesitas algo de mi parte, avisame a mi correo')
+reservation8 = Reservation.create!(user: user2, chef_id: chef4.id, reservation_date: '07/02/2022', observations: 'Nos vemos, gracias')
+reservation9 = Reservation.create!(user: user3, chef_id: chef4.id, reservation_date: '07/02/2022', observations: 'Te esperamos en casa, saludos')
+reservation10 = Reservation.create!(user: user3, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Las bebidas pueden incluirse?, gracias')
+
 p "Creando platos seleccionados"
 # chef1
 selected1 = SelectedDish.create(reservation_id: 1, dish_id: 1)
@@ -160,23 +178,6 @@ selected8 = SelectedDish.create(reservation_id: 7, dish_id: 3)
 selected9 = SelectedDish.create(reservation_id: 8, dish_id: 4)
 selected10 = SelectedDish.create(reservation_id: 9, dish_id: 4)
 selected11 = SelectedDish.create(reservation_id: 10, dish_id: 5)
-
-
-
-
-
-p "Creando reservaciones"
-reservation1 = Reservation.create!(user: user1, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Lunes por la tarde te llamo y coordinamos')
-reservation2 = Reservation.create!(user: user2, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Buenisimo, nos vemos el sábado')
-reservation3 = Reservation.create!(user: user2, chef_id: chef2.id, reservation_date: '07/02/2022', observations: 'Genial, el martes te llamo para coordinar')
-reservation4 = Reservation.create!(user: user2, chef_id: chef3.id, reservation_date: '07/02/2022', observations: 'Estupendo, te comento que tengo un horno de restaurant, por si te sirve')
-reservation5 = Reservation.create!(user: user3, chef_id: chef4.id, reservation_date: '07/02/2022', observations: 'Si puedes llámame asi coordinamos')
-reservation6 = Reservation.create!(user: user3, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Te escribo el viernes')
-reservation7 = Reservation.create!(user: user1, chef_id: chef3.id, reservation_date: '07/02/2022', observations: 'Necesitas algo de mi parte, avisame a mi correo')
-reservation8 = Reservation.create!(user: user2, chef_id: chef4.id, reservation_date: '07/02/2022', observations: 'Nos vemos, gracias')
-reservation9 = Reservation.create!(user: user3, chef_id: chef4.id, reservation_date: '07/02/2022', observations: 'Te esperamos en casa, saludos')
-reservation10 = Reservation.create!(user: user3, chef_id: chef1.id, reservation_date: '07/02/2022', observations: 'Las bebidas pueden incluirse?, gracias')
-
 
 p "Creando Reviews"
 review1 = Review.create!(rating: 4, user: user1, chef_id: chef4.id, comment: "Excelente chef, y deliciosa comida")
