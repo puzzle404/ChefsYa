@@ -75,6 +75,7 @@ class PagesController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { chef: chef })
         }
       end
+    # Recorro los chef
 
   end
     # @categories = Dish.select(:category).distinct.where(chef_id: @chef)

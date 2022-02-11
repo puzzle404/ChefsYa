@@ -30,6 +30,8 @@
   <div class="row">
     <div class="col-7">
       <div class="container-card-chef ml-5">
+        <% @rating_average = [] %>
+         <% @average = 0.0 %>
       <% @chefs.each do |chef| %>
         <%= link_to chef_dishes_path(chef.id) do %>
         <%# #Card de chef %>
@@ -46,7 +48,12 @@
                 <%= image_tag "#{dish.category}.jpg", style: 'height:80px;width:auto;' if dish.chef_id == chef.id && dish.category %>
             <% end %>
             </small></p>
-            <p><small class="text-muted"> Rating: (<%= chef.rating%>) <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-1" %> (+300 calificaciones) </small></p>
+            <% @reviews = Review.where(chef_id: chef) %>
+              <% @reviews.each do |review|%>
+                <% @rating_average << review.rating %>
+              <% end %>
+              <% @average = @rating_average.sum / @rating_average.count%>
+            <p><small class="text-muted"> Rating: (<%= @average.round(1) %>) <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-1" %> (+300 calificaciones) </small></p>
           </div>
         </div>
         <% end %>
