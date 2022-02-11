@@ -5,7 +5,7 @@
 
   <div class="row">
     <div class="col-6">
-      <h1 class= "text-center mt-4"> Reservaciones</h1>
+      <h1 class= "text-center" id="reservaciones-title"> Reservaciones</h1>
       <div class="container justify-content-center res-container" style="width:550px">
         <% @reservations.each do |reservation|  %>
           <%= link_to reservation_path(reservation) do %>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="col-6">
-      <%= image_tag 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2019%2F07%2Ftardy-reservations-opentable-FT-BLOG0719.jpg', style:"width:100%; height:900px; position:'sticky';" %>
+      <img src="https://cdn.dribbble.com/users/572419/screenshots/4646056/media/6cea07f42a0d41e0426e3bc97844c772.gif" style="height:95vh">
     </div>
   </div>
 <% else %>
