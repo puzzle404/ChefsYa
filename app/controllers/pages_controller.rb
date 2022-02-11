@@ -46,8 +46,9 @@ class PagesController < ApplicationController
     @chef3.rating = @average3.to_i
     @chef3.save
 
+    @dishes = Dish.where(chef_id: @chef1.id)
 
-
+    @chef1_dish = @dishes[0]
   end
 
   def chefs
