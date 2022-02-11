@@ -655,8 +655,27 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    background-repeat: no-repeat;
 }
+
 .color-verde-card {
 
   border-radius: 10px;
+}
+
+.btn-juan {
+    padding: 22px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.chef-name {
+  h1 {
+    font-family: Gilroy;
+    font-weight: bold;
+  }
+}
+
+.marcos {
+   border-bottom: solid 1px #e5e5e5;
 }
