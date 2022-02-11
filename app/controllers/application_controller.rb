@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
 
   # Métodos para redireccionar a los usuarios según su rol al momento de hacer Sign in
 
+  def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   protected
 
   def after_sign_in_path_for(resource)
