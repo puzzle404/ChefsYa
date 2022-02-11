@@ -10,6 +10,7 @@
     "@rails/webpacker": "5.4.3",
     "bootstrap": "4.6",
     "bulma": "^0.9.3",
+    "geocoder": "^0.2.3",
     "install": "^0.13.0",
     "jquery": "^3.6.0",
     "jquery-bar-rating": "^1.2.2",

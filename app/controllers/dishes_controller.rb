@@ -16,6 +16,15 @@ class DishesController < ApplicationController
     @average = @rating_average.sum / @rating_average.count
     @chef.rating = @average.to_i
     @chef.save
+
+    @dish_photos = []
+    @dishes.each do |dish|
+      dish.photos.each do |photo|
+        @dish_photos <<  photo.key
+      end
+    end
+    @dish_photo1 = @dish_photos[0]
+    @dish_photo2 = @dish_photos[1]
   end
 
   def new

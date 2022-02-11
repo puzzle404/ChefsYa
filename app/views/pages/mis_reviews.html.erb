@@ -1,15 +1,24 @@
+
+
 <div class="container">
+  <div class="d-flex">
+  <div class="col-6" style="background-image: url('https://www.glassdoor.com/employers/app/uploads/sites/2/2020/11/The-Ultimate-Guide-to-Glassdoor-Reviews-768x595.png'); height:100vh; background-size:contain; background-repeat: no-repeat">
+</div>
+<div class="container col-6 pr-3 mt-4 mr-5">
+  <h1 class="text-center mb-3">Mis reviews</h1>
   <% @reviews.each do |review|  %>
-    <div class="card" style="width:400px">
+    <div class="card" style="width:100%;">
       <div class="card-header">
-        <%= review.user.first_name.capitalize %>
+        <h5><%= review.user.first_name.capitalize %></h5>
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
           <p><%= review.comment %></p>
-          <footer class="blockquote-footer">Valoración de: <cite title="Source Title"><%= review.rating %></cite></footer>
+          <footer class="blockquote-footer">Valoración de: <cite title="Source Title"><%= review.rating %> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %></cite></footer>
         </blockquote>
       </div>
     </div>
   <% end %>
+</div>
+</div>
 </div>
