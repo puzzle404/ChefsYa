@@ -57,7 +57,7 @@
 
         <div class="col-10" style="background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0.1,0,0.1,0.1)), url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'); background-size:cover; background-repeat:no-repeat; background-position-y: bottom;">
           <b><h1 class= "text-center mt-4 text-white font-weight-bold"> Reservaciones</h1></b>
-          <div class="container justify-content-center res-container" style="width:550px">
+          <div class="container justify-content-center res-container" style="width:550px; height:100vh">
             <% @reservations.each do |reservation|  %>
               <%= link_to reservation_path(reservation) do %>
                 <div id= "reservation-card1"class="cards card mt-4 mr-3 col-6" style="max-width: 550px;">
