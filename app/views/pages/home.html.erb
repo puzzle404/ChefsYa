@@ -141,9 +141,9 @@
     <div class="dish-container">
       <div class="dish-info">
         <h3>Plato <span>del día</span></h3>
-        <h4>Tartar de Salmon Flambu</h4>
-        <p>por Marco Andujar</p>
-        <%= link_to "Descubrilo -->", root_path, class: "btn btn-dark" %>
+        <h4><%= @chef1_dish.title %> </h4>
+        <p> Por: <%= @chef1.first_name %> <%= @chef1.last_name %></p>
+        <%= link_to "Descubrilo -->", chef_dishes_path(@chef1), class: "btn btn-dark" %>
       </div>
       <div class="dish-video">
         <video loop playsinline autoplay muted>
