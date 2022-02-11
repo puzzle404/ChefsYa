@@ -60,7 +60,7 @@
         <%= cl_image_tag  @chef1.photo.key, class:"card-img-top" %>
       <% end %>
           <div class="card-body">
-            <h5 class="card-title text-center"> <%= @chef1.first_name %> <%= @chef1.last_name %> <%= @average1 %> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
+            <h5 class="card-title text-center"> <%= @chef1.first_name %> <%= @chef1.last_name %> <%= @average1.round(1) %> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
             <p class="card-text text-center"></p>
             <div class="boton-descubrilo text-center">
               <%= link_to "Descubrilo", chef_dishes_path(@chef1), class: "btn btn-dark" %>
@@ -74,7 +74,7 @@
         <%= cl_image_tag  @chef2.photo.key, class:"card-img-top" %>
       <% end %>
           <div class="card-body">
-            <h5 class="card-title text-center"> <%= @chef2.first_name %> <%= @chef2.last_name %> <%= @average2 %> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
+            <h5 class="card-title text-center"> <%= @chef2.first_name %> <%= @chef2.last_name %> <%= @average2.round(1) %> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
             <p class="card-text text-center"></p>
             <div class="boton-descubrilo text-center">
               <%= link_to "Descubrilo", chef_dishes_path(@chef2), class: "btn btn-dark" %>
@@ -88,7 +88,7 @@
         <%= cl_image_tag  @chef3.photo.key, class:"card-img-top" %>
       <% end %>
           <div class="card-body">
-            <h5 class="card-title text-center"> <%= @chef3.first_name %> <%= @chef3.last_name %> <%= @average3%> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
+            <h5 class="card-title text-center"> <%= @chef3.first_name %> <%= @chef3.last_name %> <%= @average3.round(1)%> <%= image_tag src='https://cdn-icons-png.flaticon.com/512/616/616655.png', style:"height:15px; width:15px ", class:"mb-2" %> </h5>
             <p class="card-text text-center"></p>
             <div class="boton-descubrilo text-center">
               <%= link_to "Descubrilo", chef_dishes_path(@chef3), class: "btn btn-dark" %>
